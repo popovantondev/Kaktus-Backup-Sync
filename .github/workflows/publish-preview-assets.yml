@@ -1,0 +1,63 @@
+name: Publish preview assets
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Reviewed preview tag to package and attach
+        required: true
+        default: v5.2.0-preview.7
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  publish-assets:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out reviewed preview source
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.tag }}
+          persist-credentials: false
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+
+      - name: Build portable package and source archive
+        shell: pwsh
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          if ($env:RELEASE_TAG -ne 'v5.2.0-preview.7') {
+            throw 'This workflow is restricted to the reviewed Preview 7 tag.'
+          }
+          ./tools/Publish.ps1 -OutputName 'Kaktus-Backup-Sync-Portable-5.2-preview.7'
+          ./tools/Export-Source.ps1 -OutputName 'Kaktus-Backup-Sync-Source-5.2-preview.7'
+
+      - name: Attach downloads and localized screenshots to the release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          $assets = @(
+            'artifacts/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip',
+            'artifacts/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256',
+            'artifacts/Kaktus-Backup-Sync-Source-5.2-preview.7.zip',
+            'artifacts/Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256',
+            'docs/images/manual/de-main.png',
+            'docs/images/manual/en-main.png',
+            'docs/images/manual/ru-main.png',
+            'docs/images/manual/startup.png'
+          )
+          foreach ($asset in $assets) {
+            if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+              throw "Release asset was not created: $asset"
+            }
+          }
+          gh release upload $env:RELEASE_TAG @assets --repo $env:GITHUB_REPOSITORY --clobber
