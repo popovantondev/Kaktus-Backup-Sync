@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../AntonsBackupManager.Core/AntonsBackupManager.Core.csproj" />
+  </ItemGroup>
+</Project>

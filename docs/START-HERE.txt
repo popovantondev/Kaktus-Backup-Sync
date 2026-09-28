@@ -1,0 +1,79 @@
+Kaktus Backup & Sync 5.2 — Portable Preview
+Windows 10/11, x64
+
+DEUTSCH
+
+1. Die ZIP-Datei vollständig in einen beschreibbaren Ordner entpacken.
+2. KaktusBackupSync.exe öffnen. Nicht direkt aus dem ZIP starten.
+3. Keine Installation nötig: die benötigte .NET-Laufzeit ist enthalten.
+   Python, Visual Studio und das .NET SDK werden nicht benötigt.
+4. Die Datei portable.flag aktiviert den portablen Modus. Nicht entfernen.
+5. Aufgaben, Sprache, Verlauf und Cache werden beim Benutzen im Unterordner
+   runtime gespeichert. Zum Umziehen die Anwendung im Infobereich beenden
+   und den GESAMTEN Programmordner kopieren, einschließlich runtime und Assets.
+   Die gewählten Quell- und Zielordner bleiben eigenständige Ordner.
+6. Nach dem Umzug die Aufgabenpfade prüfen. Optionaler Windows-Autostart
+   gilt für diesen PC und muss nach einem Pfadwechsel erneut aktiviert werden.
+
+Die DLL-Dateien gehören zur Anwendung. Nicht einzeln entfernen.
+Den Programmordner außerhalb der zu sichernden Ordner aufbewahren.
+Frühere Versionen gesicherter Dateien liegen im Ziel unter .SyncVersions;
+sie werden nicht durch Kopieren des Programmordners mitgenommen.
+
+Um Aufgaben aus einer früheren, nicht portablen Version zu übernehmen:
+Beide Versionen beenden. Den GESAMTEN Inhalt von
+%LOCALAPPDATA%\AntonsBackupManager in einen noch nicht vorhandenen runtime-Ordner
+der portablen Kopie kopieren. Bestehende Zustände nicht mischen oder überschreiben.
+Die saubere ZIP-Datei enthält keine persönlichen Aufgaben.
+Weitere Hilfe: HANDBUCH.de.md.
+Screenshots: images/manual/de-main.png and images/manual/startup.png.
+
+ENGLISH
+
+1. Extract the entire ZIP into a writable folder.
+2. Open KaktusBackupSync.exe. Do not run it from inside the ZIP.
+3. No installer is needed: the required .NET runtime is included.
+   Python, Visual Studio and the .NET SDK are not required.
+4. Keep portable.flag beside the EXE. It enables portable storage.
+5. Tasks, language, history and cache are saved in the runtime subfolder.
+   To move the app, exit through the tray and copy the ENTIRE application
+   folder, including runtime and Assets. The selected source and destination
+   folders remain separate.
+6. Recheck task paths after moving. Optional Windows startup applies to this
+   PC; enable it again if the executable path changes.
+
+Keep the DLL files. Keep the app folder outside the folders being backed up.
+Previous file versions remain in .SyncVersions at the destination; copying
+the app folder does not include those backups.
+
+To transfer tasks from an earlier non-portable version:
+Exit both versions. Copy the ENTIRE contents of
+%LOCALAPPDATA%\AntonsBackupManager into a new runtime folder in the portable
+copy. Do not merge or overwrite an existing state folder. The clean ZIP
+contains no personal tasks. More help: MANUAL.en.md.
+Screenshots: images/manual/en-main.png and images/manual/startup.png.
+
+РУССКИЙ
+
+1. Распакуйте ВЕСЬ ZIP в папку, доступную для записи.
+2. Откройте KaktusBackupSync.exe. Не запускайте его прямо внутри архива.
+3. Установка не нужна: необходимая среда .NET уже внутри.
+   Python, Visual Studio и .NET SDK для работы программы не нужны.
+4. Не удаляйте portable.flag рядом с EXE: он включает переносной режим.
+5. Задачи, язык, история и кэш сохраняются в подпапке runtime.
+   Для переноса выйдите из программы через трей и скопируйте ВСЮ папку
+   программы, включая runtime и Assets. Выбранные источники и назначения
+   остаются отдельными папками.
+6. После переноса проверьте пути задач. Автозапуск Windows действует только
+   на этом ПК; после изменения пути программы его нужно включить заново.
+
+DLL-файлы нужны программе — не удаляйте их. Храните папку программы вне
+резервируемых папок. Предыдущие версии файлов остаются в .SyncVersions
+в назначении; они не входят в копию папки программы.
+
+Чтобы перенести задачи из прежней непереносной версии:
+Закройте обе версии. Скопируйте ВСЁ содержимое
+%LOCALAPPDATA%\AntonsBackupManager в новую папку runtime внутри переносной
+копии. Не смешивайте и не перезаписывайте уже существующую папку состояния.
+В чистом ZIP личных задач нет. Подробности: MANUAL.ru.md.
+Скриншоты: images/manual/ru-main.png и images/manual/startup.png.

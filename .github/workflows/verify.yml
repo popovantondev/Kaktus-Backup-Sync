@@ -1,0 +1,26 @@
+name: Verify Windows build
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+      - name: Test file operations
+        run: dotnet test --project tests/AntonsBackupManager.Core.Tests -c Release
+      - name: Build application and workflow checks
+        run: dotnet build tests/AntonsBackupManager.UiCheck -c Release -o runtime/ci-check
+      - name: Check orchestration without interactive dialogs
+        run: dotnet runtime/ci-check/AntonsBackupManager.UiCheck.dll runtime/ci-audit --workflows-only
+      - name: Check recovery after owned-process termination
+        run: dotnet runtime/ci-check/AntonsBackupManager.UiCheck.dll --crash-check

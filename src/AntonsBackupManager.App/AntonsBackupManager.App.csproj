@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <ApplicationIcon>Assets/AppIcon.ico</ApplicationIcon>
+    <AssemblyTitle>Kaktus Backup &amp; Sync</AssemblyTitle>
+    <AssemblyName>KaktusBackupSync</AssemblyName>
+    <RootNamespace>AntonsBackupManager.App</RootNamespace>
+    <Product>Kaktus Backup &amp; Sync</Product>
+    <Version>5.2.0-preview.7</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets/AppIcon.ico" />
+    <Resource Include="Assets/KaktusMascot.png" />
+    <Content Include="Assets/StartupLeaves.mp3" Condition="Exists('Assets/StartupLeaves.mp3')" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Resource Include="Assets/Tray*.ico" />
+    <ProjectReference Include="../AntonsBackupManager.Core/AntonsBackupManager.Core.csproj" />
+    <ProjectReference Include="../AntonsBackupManager.Infrastructure/AntonsBackupManager.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,146 @@
+<Window x:Class="AntonsBackupManager.App.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:AntonsBackupManager.App"
+ Title="Kaktus Backup &amp; Sync 5.2 · Preview" Icon="{DynamicResource SyncIcon}" Width="1180" Height="820" MinWidth="900" MinHeight="700" Background="#F3F6EF" FontFamily="Segoe UI" FontSize="14" Foreground="#173B31" WindowStartupLocation="CenterScreen">
+ <Window.Resources><ResourceDictionary><ResourceDictionary.MergedDictionaries><ResourceDictionary Source="Assets/SyncIcon.xaml"/></ResourceDictionary.MergedDictionaries><BooleanToVisibilityConverter x:Key="BoolVisibility"/>
+  <Style x:Key="LanguagePicker" TargetType="ComboBox">
+   <Setter Property="Foreground" Value="#244C3D"/>
+   <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ComboBox">
+    <Grid>
+     <ToggleButton x:Name="Selector" Focusable="False" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press">
+      <ToggleButton.Template><ControlTemplate TargetType="ToggleButton">
+       <Border x:Name="Outline" Background="White" BorderBrush="#D6E2D7" BorderThickness="1" CornerRadius="11" Padding="12,9">
+        <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="24"/><ColumnDefinition Width="*"/><ColumnDefinition Width="18"/></Grid.ColumnDefinitions>
+         <TextBlock Text="&#xE774;" FontFamily="Segoe MDL2 Assets" Foreground="#23734F" VerticalAlignment="Center"/>
+         <ContentPresenter Grid.Column="1" Content="{Binding SelectionBoxItem, RelativeSource={RelativeSource AncestorType=ComboBox}}" VerticalAlignment="Center"/>
+         <Path Grid.Column="2" Data="M 0,0 L 4,4 L 8,0" Stroke="#657E6E" StrokeThickness="1.5" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        </Grid>
+       </Border>
+       <ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Outline" Property="BorderBrush" Value="#23734F"/></Trigger><Trigger Property="IsChecked" Value="True"><Setter TargetName="Outline" Property="BorderBrush" Value="#23734F"/><Setter TargetName="Outline" Property="Background" Value="#EFF6EA"/></Trigger></ControlTemplate.Triggers>
+      </ControlTemplate></ToggleButton.Template>
+     </ToggleButton>
+     <Popup x:Name="PART_Popup" IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" AllowsTransparency="True" Focusable="False" PopupAnimation="Fade">
+      <Border Background="White" BorderBrush="#D6E2D7" BorderThickness="1" CornerRadius="11" Padding="6" Margin="0,6,0,0" MinWidth="{TemplateBinding ActualWidth}">
+       <ScrollViewer MaxHeight="220"><ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained"/></ScrollViewer>
+      </Border>
+     </Popup>
+    </Grid>
+    <ControlTemplate.Triggers>
+     <Trigger Property="IsKeyboardFocusWithin" Value="True"><Setter TargetName="Selector" Property="Opacity" Value=".85"/></Trigger>
+     <Trigger Property="IsEnabled" Value="False"><Setter TargetName="Selector" Property="Opacity" Value=".45"/></Trigger>
+    </ControlTemplate.Triggers>
+   </ControlTemplate></Setter.Value></Setter>
+   <Setter Property="ItemContainerStyle"><Setter.Value><Style TargetType="ComboBoxItem">
+    <Setter Property="Padding" Value="12,9"/><Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+    <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ComboBoxItem">
+     <Border x:Name="Item" CornerRadius="7" Background="Transparent" Padding="{TemplateBinding Padding}"><ContentPresenter/></Border>
+     <ControlTemplate.Triggers><Trigger Property="IsHighlighted" Value="True"><Setter TargetName="Item" Property="Background" Value="#EAF3E4"/></Trigger><Trigger Property="IsSelected" Value="True"><Setter Property="Foreground" Value="#23734F"/><Setter Property="FontWeight" Value="SemiBold"/></Trigger></ControlTemplate.Triggers>
+    </ControlTemplate></Setter.Value></Setter>
+   </Style></Setter.Value></Setter>
+  </Style>
+  <Style x:Key="IntervalPicker" TargetType="ComboBox">
+   <Setter Property="Foreground" Value="#244C3D"/><Setter Property="FontWeight" Value="SemiBold"/>
+   <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ComboBox">
+    <Grid>
+     <ToggleButton x:Name="Selector" Focusable="False" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press">
+      <ToggleButton.Template><ControlTemplate TargetType="ToggleButton"><Border x:Name="Outline" Background="White" BorderBrush="#D6E2D7" BorderThickness="1" CornerRadius="9" Padding="12,8"><Grid><ContentPresenter Content="{Binding SelectionBoxItem, RelativeSource={RelativeSource AncestorType=ComboBox}}" VerticalAlignment="Center"/><Path Data="M 0,0 L 4,4 L 8,0" Stroke="#657E6E" StrokeThickness="1.5" HorizontalAlignment="Right" VerticalAlignment="Center"/></Grid></Border><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Outline" Property="BorderBrush" Value="#23734F"/></Trigger><Trigger Property="IsChecked" Value="True"><Setter TargetName="Outline" Property="BorderBrush" Value="#23734F"/></Trigger></ControlTemplate.Triggers></ControlTemplate></ToggleButton.Template>
+     </ToggleButton>
+     <Popup x:Name="PART_Popup" IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" AllowsTransparency="True" PopupAnimation="Fade"><Border Background="White" BorderBrush="#D6E2D7" BorderThickness="1" CornerRadius="9" Padding="5" Margin="0,5,0,0" MinWidth="{TemplateBinding ActualWidth}"><ScrollViewer MaxHeight="220"><ItemsPresenter/></ScrollViewer></Border></Popup>
+    </Grid>
+   </ControlTemplate></Setter.Value></Setter>
+   <Setter Property="ItemContainerStyle"><Setter.Value><Style TargetType="ComboBoxItem"><Setter Property="Padding" Value="12,8"/><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ComboBoxItem"><Border x:Name="Item" CornerRadius="6" Background="Transparent" Padding="{TemplateBinding Padding}"><ContentPresenter/></Border><ControlTemplate.Triggers><Trigger Property="IsHighlighted" Value="True"><Setter TargetName="Item" Property="Background" Value="#EAF3E4"/></Trigger><Trigger Property="IsSelected" Value="True"><Setter Property="Foreground" Value="#23734F"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style></Setter.Value></Setter>
+  </Style>
+  <Style TargetType="Button">
+   <Setter Property="Background" Value="White"/><Setter Property="Foreground" Value="#244C3D"/><Setter Property="BorderBrush" Value="#D6E2D7"/><Setter Property="BorderThickness" Value="1"/><Setter Property="Padding" Value="12,8"/><Setter Property="MinHeight" Value="38"/><Setter Property="Cursor" Value="Hand"/><Setter Property="FontWeight" Value="SemiBold"/>
+   <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button">
+    <Border x:Name="Chrome" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="9" Padding="{TemplateBinding Padding}"><ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/></Border>
+    <ControlTemplate.Triggers>
+     <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Chrome" Property="Opacity" Value=".8"/></Trigger>
+     <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Chrome" Property="BorderBrush" Value="#328B60"/><Setter TargetName="Chrome" Property="BorderThickness" Value="2"/></Trigger>
+     <Trigger Property="IsEnabled" Value="False"><Setter TargetName="Chrome" Property="Opacity" Value=".38"/></Trigger>
+    </ControlTemplate.Triggers>
+   </ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style x:Key="Primary" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}"><Setter Property="Background" Value="#23734F"/><Setter Property="Foreground" Value="White"/><Setter Property="BorderBrush" Value="#23734F"/></Style>
+  <Style TargetType="TextBox"><Setter Property="Padding" Value="12,10"/><Setter Property="MinHeight" Value="42"/><Setter Property="VerticalContentAlignment" Value="Center"/><Setter Property="BorderBrush" Value="#D6E2D7"/><Setter Property="Background" Value="#FAFCF8"/></Style>
+  <Style TargetType="CheckBox"><Setter Property="Foreground" Value="#244C3D"/><Setter Property="VerticalContentAlignment" Value="Center"/><Setter Property="FontWeight" Value="SemiBold"/></Style>
+  <Style x:Key="Card" TargetType="Border"><Setter Property="Background" Value="White"/><Setter Property="CornerRadius" Value="14"/><Setter Property="BorderBrush" Value="#E0E8DA"/><Setter Property="BorderThickness" Value="1"/><Setter Property="Padding" Value="22"/></Style>
+  <Style TargetType="DataGridColumnHeader"><Setter Property="Background" Value="#F2F6EE"/><Setter Property="Foreground" Value="#687C6D"/><Setter Property="Padding" Value="12"/><Setter Property="FontWeight" Value="SemiBold"/><Setter Property="BorderThickness" Value="0"/></Style>
+  <Style TargetType="DataGridCell"><Setter Property="Padding" Value="12,9"/><Setter Property="BorderThickness" Value="0"/></Style>
+  <Style TargetType="ListBoxItem"><Setter Property="Foreground" Value="White"/><Setter Property="HorizontalContentAlignment" Value="Stretch"/><Setter Property="Padding" Value="12"/><Setter Property="Margin" Value="0,0,0,6"/>
+   <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ListBoxItem"><Border x:Name="Tile" CornerRadius="9" Background="Transparent" Padding="{TemplateBinding Padding}"><ContentPresenter/></Border><ControlTemplate.Triggers><Trigger Property="IsSelected" Value="True"><Setter TargetName="Tile" Property="Background" Value="#285548"/></Trigger><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Tile" Property="Background" Value="#316350"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter>
+  </Style>
+ </ResourceDictionary></Window.Resources>
+ <Grid>
+  <Grid.ColumnDefinitions><ColumnDefinition Width="220"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+  <Border Background="#123B30"><Grid Margin="20,28,20,24">
+   <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+   <StackPanel>
+    <Image Source="{StaticResource SyncIcon}" Width="52" Height="52" HorizontalAlignment="Left" Margin="0,0,0,18"/>
+    <TextBlock Text="Kaktus" Foreground="White" FontSize="29" FontWeight="SemiBold"/><TextBlock Text="Backup &amp; Sync" Foreground="#ADCFB4" FontSize="14" FontWeight="SemiBold" Margin="0,2,0,26"/>
+   </StackPanel>
+   <StackPanel Grid.Row="1"><TextBlock Text="{DynamicResource Tasks}" Foreground="#B8CEBC" Margin="0,0,0,12"/><Button x:Name="NewButton" Content="{DynamicResource New}" Command="{Binding NewCommand}" Background="#214D3D" Foreground="White" BorderBrush="#3E6C53" Margin="0,0,0,8"/><Button x:Name="PauseAllButton" Content="{Binding PauseAllText}" Command="{Binding PauseAllCommand}" Background="#214D3D" Foreground="White" BorderBrush="#3E6C53" Margin="0,0,0,12"/></StackPanel>
+   <ListBox x:Name="SavedTasksListBox" SelectedValuePath="Task" Grid.Row="2" Background="#123B30" BorderThickness="0" Foreground="White" ItemsSource="{Binding Tasks}" SelectedValue="{Binding SelectedTask, Mode=TwoWay}" IsEnabled="{Binding CanEdit}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+    <ListBox.Template><ControlTemplate TargetType="ListBox"><Border Background="{TemplateBinding Background}"><ScrollViewer Focusable="False" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"><ItemsPresenter/></ScrollViewer></Border></ControlTemplate></ListBox.Template>
+    <ListBox.ItemTemplate><DataTemplate><StackPanel>
+     <TextBlock Text="{Binding Name}" TextWrapping="Wrap"><TextBlock.Style><Style TargetType="TextBlock"><Setter Property="Foreground" Value="White"/><Style.Triggers><DataTrigger Binding="{Binding BackgroundCheckEnabled}" Value="False"><Setter Property="Foreground" Value="#8EAB97"/></DataTrigger></Style.Triggers></Style></TextBlock.Style></TextBlock>
+     <TextBlock Text="{Binding State}" Foreground="#BCE49F" FontSize="11" TextWrapping="Wrap" Margin="0,4,0,0"/>
+     <TextBlock Text="{Binding Timing}" Foreground="#B8CEBC" FontSize="11" TextWrapping="Wrap" Margin="0,4,0,0"/>
+    </StackPanel></DataTemplate></ListBox.ItemTemplate>
+   </ListBox>
+   <StackPanel Grid.Row="3"><TextBlock Text="{DynamicResource Local}" Foreground="#BCE49F" FontWeight="SemiBold"/><TextBlock Text="{DynamicResource Scope}" Foreground="#B8CEBC" TextWrapping="Wrap" FontSize="12" Margin="0,8,0,0"/></StackPanel>
+  </Grid></Border>
+  <Grid Grid.Column="1" Margin="24,18">
+   <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+   <Grid Margin="0,0,0,14"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+    <StackPanel><TextBlock Text="{DynamicResource Heading}" FontSize="28" FontWeight="SemiBold"/><TextBlock Text="{DynamicResource Subtitle}" Foreground="#6C806F" TextWrapping="Wrap" Margin="0,5,14,0"/></StackPanel>
+    <ComboBox x:Name="LanguageBox" Grid.Column="1" Width="160" Height="42" Style="{StaticResource LanguagePicker}" VerticalAlignment="Top" SelectedIndex="{Binding LanguageIndex, Mode=TwoWay}" IsEnabled="{Binding CanEdit}" AutomationProperties.Name="Language"><ComboBoxItem Content="Deutsch" Tag="de"/><ComboBoxItem Content="English" Tag="en"/><ComboBoxItem Content="Русский" Tag="ru"/></ComboBox>
+   </Grid>
+   <Border Grid.Row="1" Style="{StaticResource Card}" Padding="16" Margin="0,0,0,12"><ScrollViewer x:Name="EditorScroll" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" MaxHeight="260"><Grid x:Name="EditorPanel" IsEnabled="{Binding CanEdit}" Margin="0,0,14,8">
+    <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+    <Grid.ColumnDefinitions><ColumnDefinition Width="92"/><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+    <TextBlock Text="{DynamicResource Name}" VerticalAlignment="Center"/><TextBox x:Name="TaskNameTextBox" Text="{Binding Editor.Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.ColumnSpan="2" AutomationProperties.Name="{DynamicResource Name}"/>
+    <TextBlock Grid.Row="1" Text="{DynamicResource Source}" VerticalAlignment="Center"/><TextBox x:Name="SourcePathTextBox" Text="{Binding Editor.Source, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1" Margin="0,12,10,0" AutomationProperties.Name="{DynamicResource Source}"/><StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" Margin="0,12,0,0"><Button x:Name="BrowseSourceButton" Content="{DynamicResource Browse}" Command="{Binding BrowseSourceCommand}" Padding="10,8"/><Button x:Name="OpenSourceButton" Command="{Binding OpenSourceCommand}" ToolTip="{DynamicResource OpenFolder}" AutomationProperties.Name="{DynamicResource OpenFolder}" Margin="6,0,0,0" Content="{DynamicResource OpenShort}" Padding="10,8"/></StackPanel>
+    <TextBlock Grid.Row="2" Text="{DynamicResource Destination}" VerticalAlignment="Center"/><TextBox x:Name="DestinationPathTextBox" Text="{Binding Editor.Destination, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1" Margin="0,12,10,0" AutomationProperties.Name="{DynamicResource Destination}"/><StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" Margin="0,12,0,0"><Button x:Name="BrowseDestinationButton" Content="{DynamicResource Browse}" Command="{Binding BrowseDestinationCommand}" Padding="10,8"/><Button x:Name="OpenDestinationButton" Command="{Binding OpenDestinationCommand}" ToolTip="{DynamicResource OpenFolder}" AutomationProperties.Name="{DynamicResource OpenFolder}" Margin="6,0,0,0" Content="{DynamicResource OpenShort}" Padding="10,8"/></StackPanel>
+    <WrapPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,12,0,0">
+     <CheckBox x:Name="BackgroundCheckEnabledCheckBox" Content="{DynamicResource AutoSyncEvery}" IsChecked="{Binding Editor.Automatic, Mode=TwoWay}"/>
+     <ComboBox x:Name="IntervalComboBox" Width="106" Height="38" Style="{StaticResource IntervalPicker}" SelectedIndex="{Binding Editor.IntervalIndex, Mode=TwoWay}" IsEnabled="{Binding Editor.Automatic}" AutomationProperties.Name="{DynamicResource Interval}">
+      <ComboBoxItem Content="1 min" Tag="1"/><ComboBoxItem Content="5 min" Tag="5"/><ComboBoxItem Content="15 min" Tag="15"/><ComboBoxItem Content="30 min" Tag="30"/><ComboBoxItem Content="60 min" Tag="60"/>
+     </ComboBox>
+    </WrapPanel>
+    <Expander x:Name="AdvancedExpander" Grid.Row="4" Grid.ColumnSpan="3" Header="{DynamicResource Advanced}" Margin="0,8,0,0" Expanded="ShowSafetySettings">
+     <StackPanel Margin="0,8,0,0">
+      <StackPanel x:Name="SafetySection" GotKeyboardFocus="ShowSafetySettings">
+      <CheckBox x:Name="SafetyModeCheckBox" Content="{DynamicResource SafetyMode}" IsChecked="{Binding Editor.SafetyEnabled}"/>
+      <Button x:Name="ResetSafetyButton" Content="{DynamicResource ResetSafety}" Command="{Binding Editor.ResetSafetyCommand}" Click="ShowSafetySettings" HorizontalAlignment="Left" Margin="0,8,0,0"/>
+      <TextBlock x:Name="SafetyCountTextBlock" Text="{Binding SafetyText}" Foreground="#6C806F" TextWrapping="Wrap" Margin="0,5,0,8"/>
+      </StackPanel>
+      <WrapPanel><TextBlock Text="{DynamicResource VersionLimit}" VerticalAlignment="Center" Margin="0,0,8,0"/><TextBox x:Name="VersionLimitTextBox" Width="60" Text="{Binding Editor.VersionLimit, UpdateSourceTrigger=PropertyChanged}"/></WrapPanel>
+      <WrapPanel Margin="0,8,0,0"><Button Content="{DynamicResource UsbBind}" Command="{Binding BindUsbCommand}" Margin="0,0,8,0"/><Button Content="{DynamicResource UsbUnbind}" Command="{Binding UnbindUsbCommand}"/></WrapPanel>
+      <TextBlock x:Name="UsbStateTextBlock" Text="{Binding UsbText}" TextWrapping="Wrap" Foreground="#6C806F" Margin="0,5,0,0"/>
+     </StackPanel>
+    </Expander>
+   </Grid></ScrollViewer></Border>
+   <Border Grid.Row="2" Style="{StaticResource Card}" Padding="16" MinHeight="125"><Grid>
+    <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+    <DockPanel><Button x:Name="CompareButton" DockPanel.Dock="Right" Content="{DynamicResource Compare}" Command="{Binding CompareCommand}" Padding="10,5" MinHeight="28"/><TextBlock Text="{DynamicResource Preview}" FontSize="18" FontWeight="SemiBold" VerticalAlignment="Center"/></DockPanel><TextBlock x:Name="PlanTextBlock" Text="{Binding Preview.Summary}" Visibility="{Binding Preview.HasPlan, Converter={StaticResource BoolVisibility}}" Grid.Row="1" Foreground="#6C806F" TextWrapping="Wrap" Margin="0,8,0,14"/>
+    <DataGrid MouseDoubleClick="ShowSelectedConflict" SelectionChanged="PlanSelectionChanged" SelectionMode="Extended" SelectionUnit="FullRow" x:Name="PlanGrid" ItemsSource="{Binding Preview.Rows}" Grid.Row="2" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CanUserResizeRows="False" GridLinesVisibility="None" HeadersVisibility="Column" BorderThickness="0" Background="White" RowBackground="White" AlternatingRowBackground="#FAFCF8" EnableRowVirtualization="True" HorizontalScrollBarVisibility="Auto">
+     <DataGrid.Columns><DataGridTextColumn x:Name="ActionColumn" Width="150" Binding="{Binding Action}"/><DataGridTextColumn x:Name="PathColumn" Width="*" Binding="{Binding Path}"/></DataGrid.Columns>
+    </DataGrid>
+    <Border x:Name="WelcomePanel" Visibility="{Binding ShowWelcome, Converter={StaticResource BoolVisibility}}" Grid.Row="2" Background="White"><Grid><Grid.ColumnDefinitions><ColumnDefinition Width="140"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions><Image Source="{x:Static local:Brand.Mascot}" Width="132" Height="132" VerticalAlignment="Center" RenderOptions.BitmapScalingMode="HighQuality"/><StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="12,0,8,0"><TextBlock Text="{DynamicResource WelcomeTitle}" FontSize="19" FontWeight="SemiBold" TextWrapping="Wrap"/><TextBlock Text="{DynamicResource WelcomeBody}" Foreground="#6C806F" TextWrapping="Wrap" Margin="0,8,0,0"/></StackPanel></Grid></Border>
+    <Expander Grid.Row="2" x:Name="ErrorDetails" VerticalAlignment="Stretch" Background="White" Header="{DynamicResource Details}" Visibility="{Binding Status.HasError, Converter={StaticResource BoolVisibility}}" IsExpanded="{Binding Status.HasError, Mode=OneWay}" Margin="0,0,0,8"><ScrollViewer VerticalScrollBarVisibility="Auto"><TextBox x:Name="ErrorDetailsText" Text="{Binding Status.Details, Mode=OneWay}" IsReadOnly="True" TextWrapping="Wrap" BorderThickness="0" Background="Transparent" FontSize="13" MinHeight="0" Padding="4"/></ScrollViewer></Expander>
+   </Grid></Border>
+   <StackPanel Grid.Row="3" Margin="0,16,0,0">
+    <ProgressBar x:Name="Progress" Height="3" IsIndeterminate="True" Visibility="{Binding IsBusy, Converter={StaticResource BoolVisibility}}" Foreground="#23734F" Margin="0,0,0,8"/>
+    <TextBlock x:Name="StatusTextBlock" Text="{Binding Status.Text}" TextWrapping="Wrap" Foreground="#506F5B" Margin="2,0,0,12" MinHeight="20" AutomationProperties.LiveSetting="Polite"/>
+    <WrapPanel>
+     <Button x:Name="PreviewButton" Content="{DynamicResource Inspect}" Command="{Binding PreviewCommand}" Style="{StaticResource Primary}" Margin="0,0,8,8"/>
+     <Button x:Name="CopyButton" Content="{DynamicResource Copy}" Command="{Binding SynchronizeCommand}" Margin="0,0,8,8"/>
+     <Button x:Name="PauseTaskButton" Content="{Binding PauseTaskText}" Command="{Binding PauseTaskCommand}" Margin="0,0,8,8"/>
+     <Button x:Name="ResolveButton" Content="{DynamicResource ResolveConflicts}" Command="{Binding ResolveCommand}" Visibility="{Binding Preview.HasConflicts, Converter={StaticResource BoolVisibility}}" Margin="0,0,8,8"/><Button x:Name="DeleteButton" Content="{DynamicResource Delete}" Command="{Binding DeleteCommand}" Margin="0,0,8,8"/>
+     <Button x:Name="VersionsButton" Content="{DynamicResource Versions}" Command="{Binding VersionsCommand}" Margin="0,0,8,8"/>
+     <Button x:Name="HistoryButton" Content="{DynamicResource History}" Command="{Binding HistoryCommand}" Margin="0,0,8,8"/>
+     <Button x:Name="CancelPreviewButton" Content="{DynamicResource Cancel}" Command="{Binding CancelCommand}" Margin="0,0,8,8"/>
+    </WrapPanel>
+   </StackPanel>
+  </Grid>
+ </Grid>
+</Window>

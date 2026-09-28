@@ -1,0 +1,6 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <PathGeometry x:Key="UpperArrowGeometry" Figures="M43,102 C66,38 155,31 204,84 M204,51 V84 H173"/>
+  <PathGeometry x:Key="LowerArrowGeometry" Figures="M213,154 C190,218 101,225 52,172 M52,205 V172 H83"/>
+  <BitmapImage x:Key="SyncIcon" UriSource="/KaktusBackupSync;component/Assets/KaktusMascot.png" />
+</ResourceDictionary>

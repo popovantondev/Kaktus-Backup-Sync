@@ -1,0 +1,11 @@
+<Project Sdk="MSTest.Sdk/4.0.2">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <TestingExtensionsProfile>None</TestingExtensionsProfile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/AntonsBackupManager.Core/AntonsBackupManager.Core.csproj" />
+    <ProjectReference Include="../../src/AntonsBackupManager.Infrastructure/AntonsBackupManager.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

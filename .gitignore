@@ -1,0 +1,20 @@
+bin/
+obj/
+.packages/
+.vs/
+*.user
+*.suo
+
+# Runtime state and reports belong to the user's device, never to Git.
+runtime/
+reports/
+
+# Local agent workflow notes are not part of the public application.
+AGENTS.md
+WORK_STATUS.md
+*MASTER_INSTRUCTIONS_PRIVATE.md
+PRIVATE_*.md
+artifacts/
+
+# Reversible holding area for local releases, never public source.
+Корзина_на_проверку/

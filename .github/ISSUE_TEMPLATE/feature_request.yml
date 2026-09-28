@@ -1,0 +1,30 @@
+name: Idee vorschlagen
+description: Suggest an improvement in Deutsch, Русский or English.
+title: "[Idee] "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Beschreibe den Vorschlag auf Deutsch, Russisch oder Englisch. Bitte keine
+        persönlichen Dateien oder vertraulichen Angaben anhängen.
+  - type: textarea
+    id: need
+    attributes:
+      label: Welches Problem soll gelöst werden?
+      description: Beschreibe die Situation und was dir aktuell fehlt.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Was wäre hilfreich?
+      description: Erkläre die gewünschte Lösung und ein Beispiel.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Was hast du bereits versucht?
+    validations:
+      required: false

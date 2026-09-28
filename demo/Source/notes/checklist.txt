@@ -1,0 +1,3 @@
+- Select Source and Destination.
+- Run the preview.
+- Confirm copying only after reading the plan.

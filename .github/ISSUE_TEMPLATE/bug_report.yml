@@ -1,0 +1,44 @@
+name: Fehler melden
+description: Report a problem in Deutsch, Русский or English.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Schreibe auf Deutsch, Russisch oder Englisch. Entferne private Pfade,
+        Dateinamen und Kontodaten aus Texten und Screenshots.
+  - type: input
+    id: version
+    attributes:
+      label: Programmversion
+      placeholder: "5.2.0-preview.7"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows-Version und Systemtyp
+      placeholder: "Windows 11, x64"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Schritte und beobachtetes Ergebnis
+      description: Welche Schritte führen zum Problem und was ist passiert?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Erwartetes Ergebnis
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Weitere Angaben
+      description: Fehlermeldung oder Screenshot nach dem Entfernen privater Informationen.
+    validations:
+      required: false
