@@ -2,12 +2,9 @@ name: Publish preview assets
 
 on:
   workflow_dispatch:
-    inputs:
-      tag:
-        description: Reviewed preview tag to package and attach
-        required: true
-        default: v5.2.0-preview.7
-        type: string
+  push:
+    branches:
+      - publish-preview-assets-once
 
 permissions:
   contents: write
@@ -20,7 +17,7 @@ jobs:
       - name: Check out reviewed preview source
         uses: actions/checkout@v7
         with:
-          ref: ${{ inputs.tag }}
+          ref: v5.2.0-preview.7
           persist-credentials: false
 
       - name: Set up .NET
@@ -30,12 +27,7 @@ jobs:
 
       - name: Build portable package and source archive
         shell: pwsh
-        env:
-          RELEASE_TAG: ${{ inputs.tag }}
         run: |
-          if ($env:RELEASE_TAG -ne 'v5.2.0-preview.7') {
-            throw 'This workflow is restricted to the reviewed Preview 7 tag.'
-          }
           ./tools/Publish.ps1 -OutputName 'Kaktus-Backup-Sync-Portable-5.2-preview.7'
           ./tools/Export-Source.ps1 -OutputName 'Kaktus-Backup-Sync-Source-5.2-preview.7'
 
@@ -43,7 +35,7 @@ jobs:
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
-          RELEASE_TAG: ${{ inputs.tag }}
+          RELEASE_TAG: v5.2.0-preview.7
         run: |
           $assets = @(
             'artifacts/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip',
