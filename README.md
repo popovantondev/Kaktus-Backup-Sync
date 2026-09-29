@@ -1,5 +1,7 @@
 # Kaktus Backup & Sync 5.2
 
+[Benutzerhandbuch](https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-de.html)
+
 [Deutsch](README.md) · [English](docs/README.en.md) · [Русский](docs/README.ru.md)
 
 **Windows x64 · Portable ZIP · .NET-Laufzeit enthalten**
