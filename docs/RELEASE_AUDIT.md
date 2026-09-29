@@ -1,7 +1,10 @@
-# Release audit — 5.2.0-preview.7
+# Historical release audit — 5.2.0-preview.7 (2026-09-28)
 
-This report covers a verified local preview. Physical power-loss testing and a
-fresh Windows installation remain external checks.
+This record describes the local verification snapshot prepared before the public
+release. It is not the current publication status or evidence of additional tests.
+The public [v5.2.0-preview.7 release](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7)
+now contains the Portable ZIP, source ZIP, checksums, and language-matched screenshots.
+Physical power-loss testing and a fresh Windows installation remain outstanding.
 
 ## Changes and evidence
 
