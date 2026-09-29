@@ -7,7 +7,7 @@
 **Windows x64 · Portable ZIP · .NET-Laufzeit enthalten**
 
 - [Releases und SHA-256-Prüfsummen](https://github.com/popovantondev/Kaktus-Backup-Sync/releases)
-- [Anleitung](docs/HANDBUCH.de.md) · [Rückmeldung](https://github.com/popovantondev/Kaktus-Backup-Sync/issues)
+- [Anleitung](docs/HANDBUCH.de.md) · [Rückmeldung](https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose)
 
 Windows-Vorabversion für einseitige Ordnersicherung: Vorschau, frühere Versionen,
 automatische Aufgaben und Bedienung im Infobereich. Deutsch ist die Standardsprache.

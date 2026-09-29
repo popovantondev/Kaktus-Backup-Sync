@@ -11,7 +11,7 @@
 **Windows x64 · переносимый ZIP · .NET уже включён**
 
 - [Релизы и SHA-256](https://github.com/popovantondev/Kaktus-Backup-Sync/releases)
-- [Руководство](MANUAL.ru.md) · [Обратная связь](https://github.com/popovantondev/Kaktus-Backup-Sync/issues)
+- [Руководство](MANUAL.ru.md) · [Обратная связь](https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose)
 
 Предварительная Windows-программа для односторонней синхронизации: просмотр плана,
 предыдущие версии, автоматические задачи и трей. Немецкий язык основной;
