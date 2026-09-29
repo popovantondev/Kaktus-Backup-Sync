@@ -11,7 +11,7 @@ screenshots, tray notification checks and release packaging updates.
 **Windows x64 · Portable ZIP · .NET runtime included**
 
 - [Releases and SHA-256 checksums](https://github.com/popovantondev/Kaktus-Backup-Sync/releases)
-- [User manual](MANUAL.en.md) · [Feedback](https://github.com/popovantondev/Kaktus-Backup-Sync/issues)
+- [User manual](MANUAL.en.md) · [Feedback](https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose)
 
 A Windows preview for one-way backup with preview, previous versions, automatic
 tasks and a tray interface. German is the default; English and Russian are available.
