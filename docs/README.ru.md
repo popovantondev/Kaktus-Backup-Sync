@@ -1,5 +1,7 @@
 # Kaktus Backup & Sync 5.2
 
+[Руководство пользователя](https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-ru.html)
+
 В preview.7 утверждённый маскот используется во всех значках и окнах; добавлены
 скриншоты руководств на нужном языке и проверки фоновых уведомлений.
 [Архитектура](ARCHITECTURE.md) · [Исходники](SOURCE-PACKAGE.md).

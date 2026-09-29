@@ -1,5 +1,7 @@
 # Kaktus Backup & Sync 5.2
 
+[User guide](https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-en.html)
+
 Preview.7 uses the approved mascot throughout the app and adds localized manual
 screenshots, tray notification checks and release packaging updates.
 [Architecture](ARCHITECTURE.md) · [Source package](SOURCE-PACKAGE.md).
