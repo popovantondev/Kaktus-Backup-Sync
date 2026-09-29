@@ -60,8 +60,9 @@ language-matched manual screenshots; the clean source archive is not yet regener
 and [source guidance](SOURCE-PACKAGE.md).
 
 The Windows workflow builds and runs core, windowless orchestration and child-process
-recovery checks. It does not publish. A hosted GitHub run is pending publication;
-local execution is not claimed to be a GitHub CI result.
+recovery checks. It does not publish. At the time of this 2026-09-28 local snapshot,
+a hosted GitHub run was not verified. The later public release listed above is
+publication evidence only; it does not change the scope of these local test results.
 
 ## Remaining scope and practical limits
 
