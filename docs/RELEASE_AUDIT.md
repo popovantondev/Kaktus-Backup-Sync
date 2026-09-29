@@ -1,7 +1,10 @@
-# Release audit — 5.2.0-preview.7
+# Historical release audit — 5.2.0-preview.7 (2026-09-28)
 
-This report covers a verified local preview. Physical power-loss testing and a
-fresh Windows installation remain external checks.
+This record describes the local verification snapshot prepared before the public
+release. It is not the current publication status or evidence of additional tests.
+The public [v5.2.0-preview.7 release](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7)
+now contains the Portable ZIP, source ZIP, checksums, and language-matched screenshots.
+Physical power-loss testing and a fresh Windows installation remain outstanding.
 
 ## Changes and evidence
 
@@ -57,8 +60,9 @@ language-matched manual screenshots; the clean source archive is not yet regener
 and [source guidance](SOURCE-PACKAGE.md).
 
 The Windows workflow builds and runs core, windowless orchestration and child-process
-recovery checks. It does not publish. A hosted GitHub run is pending publication;
-local execution is not claimed to be a GitHub CI result.
+recovery checks. It does not publish. At the time of this 2026-09-28 local snapshot,
+a hosted GitHub run was not verified. The later public release listed above is
+publication evidence only; it does not change the scope of these local test results.
 
 ## Remaining scope and practical limits
 

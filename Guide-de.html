@@ -1,0 +1,178 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071a35"><meta name="description" content="Erstelle &#252;bersichtliche Sicherungsaufgaben und synchronisiere ausgew&#228;hlte Ordner mit pr&#252;fbaren, wiederherstellbaren Aktionen."><title>Kaktus Backup &amp;amp; Sync — BENUTZERHANDBUCH</title><style>:root{--ink:#14253d;--muted:#607087;--line:#dbe4f0;--blue:#1677ff;--panel:#fff;--canvas:#f3f6fb}
+*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font:16px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:#075dd1;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#003c91}.shell{width:min(100% - 36px,1000px);margin:0 auto;padding:24px 0 56px}.top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:20px}.brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:750;text-decoration:none}.brand-mark{display:grid;width:38px;height:38px;place-items:center;border-radius:12px;background:#e6f0ff;color:#075dd1;font-size:18px;font-weight:800}.brand img{width:38px;height:38px;object-fit:contain}nav{display:flex;gap:8px;flex-wrap:wrap}nav a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#34445b;text-decoration:none;font-size:14px;font-weight:650}nav a[aria-current=page]{background:#e6f0ff;border-color:#b8d3ff;color:#075dd1}.hero{display:grid;grid-template-columns:1fr 104px;gap:24px;align-items:center;padding:38px 42px;border-radius:28px;background:radial-gradient(circle at 90% 10%,#1f5cad 0,#102c55 34%,#07172e 76%);color:#fff;box-shadow:0 16px 38px #0b2b551f}.kicker{margin:0 0 8px;color:#9bc5ff;font-size:12px;letter-spacing:.14em;font-weight:750}.meta{margin:12px 0 0;color:#c7dcfa;font-size:14px;font-weight:650}h1{margin:0;font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-.03em}.lead{max-width:720px;margin:15px 0 0;color:#e2edff;font-size:18px;line-height:1.55}.brand-mark-large{display:grid;width:92px;height:92px;place-items:center;border:1px solid #ffffff42;border-radius:24px;background:#ffffff12;color:#fff;font-size:38px;font-weight:800}.button{display:inline-block;margin-top:19px;padding:10px 16px;border:1px solid #ffffff5c;border-radius:12px;background:#fff;color:#0c315e;font-weight:700;text-decoration:none}.overview,.topic{margin:16px 0;padding:26px 30px;background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:0 5px 16px #0b2b5507}.overview p:first-child{margin-top:0}.overview img{display:block;max-width:100%;height:auto;margin:16px auto;border:1px solid var(--line);border-radius:12px}.overview table,.topic table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse}.overview th,.overview td,.topic th,.topic td{padding:8px 10px;border:1px solid var(--line);text-align:left}.topic h2{margin:0 0 12px;font-size:22px;line-height:1.3;letter-spacing:-.015em}.topic h3{margin:22px 0 8px;font-size:18px;line-height:1.35}.topic p{margin:0 0 12px}.topic p:last-child{margin-bottom:0}.topic ul,.topic ol{padding-left:1.35em}.topic li{margin:.35em 0}.topic th{background:#eef4fc}.topic pre{max-width:100%;overflow:auto;padding:16px;border-radius:12px;background:#0b1b31;color:#e5efff}.topic code{padding:.12em .35em;border-radius:5px;background:#edf2f8}.topic pre code{padding:0;background:transparent;color:inherit}.topic blockquote{margin:12px 0;padding:4px 16px;border-left:3px solid #8bbaff;color:var(--muted)}footer{margin-top:24px;padding:20px 10px;color:var(--muted);text-align:center;font-size:14px}@media(max-width:620px){.shell{width:min(100% - 22px,1000px);padding-top:12px}.top{align-items:flex-start;flex-direction:column}.hero{grid-template-columns:1fr 66px;padding:26px 22px;border-radius:20px;gap:12px}.brand-mark-large{width:66px;height:66px;font-size:28px;border-radius:18px}.lead{font-size:16px}.overview,.topic{padding:21px 19px}}@media print{body{background:#fff}.shell{width:100%;padding:0}.top nav,.button{break-inside:avoid}.hero,.topic,.overview{box-shadow:none}.topic{break-inside:avoid}}</style></head><body><div class="shell"><header class="top"><a class="brand" href="Guide-en.html"><span class="brand-mark" aria-hidden="true">K</span><span>Kaktus Backup &amp; Sync</span></a><nav aria-label="Sprache"><a href="Guide-de.html" aria-current="page">Deutsch</a><a href="Guide-en.html">English</a><a href="Guide-ru.html">Русский</a></nav></header><main><section class="hero"><div><p class="kicker">BENUTZERHANDBUCH &#183; Windows &#183; Preview 5.2.0-preview.7</p><h1>Kaktus Backup &amp; Sync</h1><p class="lead">Erstelle &#252;bersichtliche Sicherungsaufgaben und synchronisiere ausgew&#228;hlte Ordner mit pr&#252;fbaren, wiederherstellbaren Aktionen.</p><p class="meta">Windows &#183; Preview 5.2.0-preview.7</p><a class="button" href="https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7">Vorschau herunterladen</a></div><div class="brand-mark-large" aria-hidden="true">K</div></section><section class="overview">
+<p><a href="Guide-de.html">Deutsch</a> · <a href="Guide-en.html">English</a> · <a href="Guide-ru.html">Русский</a></p>
+<p><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/images/manual/de-main.png" alt="Hauptfenster auf Deutsch; Ordnernamen und Dateien sind frei erfunden." /></p>
+<p>Die Sprachauswahl gilt auch für Menü und Statushinweis im Infobereich. Neue
+Benachrichtigungen verwenden die aktuell gewählte Sprache. Bereits von Windows
+angezeigte Benachrichtigungen behalten ihren bisherigen Text.</p>
+<p>Fehlerhinweise und bereits sichtbare Details ändern ebenfalls die Sprache.
+Der Ordner der laufenden portablen Anwendung darf nicht Teil einer Aufgabe sein:
+Ihre Arbeitsdaten ändern sich während des Betriebs. Die Anwendung außerhalb der
+synchronisierten Ordner aufbewahren. Für eine Kopie der Anwendung im Infobereich
+beenden und die gesamte Programmmappe im Explorer kopieren.</p>
+</section><section class="topic"><h2 id="aufgabe-erstellen">Aufgabe erstellen</h2>
+<ol>
+<li><strong>Neue Aufgabe</strong> anklicken und einen Namen eingeben.</li>
+<li>Quelle und Ziel auswählen. <strong>Auswählen</strong> startet im bereits eingetragenen
+Ordner. <strong>Öffnen</strong> öffnet ihn im Explorer. Das Ziel muss schon existieren.</li>
+<li><strong>Prüfen</strong> anklicken. Die Aufgabe wird nach einer erfolgreichen Prüfung
+gespeichert; auch eine leere Quelle ist erlaubt. Bei einem Fehler zeigt die
+Dateivorschau Details. Die Prüfung verändert keine Nutzdateien.</li>
+<li>Den Plan lesen. <strong>Synchronisieren</strong> anklicken und bestätigen.</li>
+</ol>
+<p>Die Richtung ist immer Quelle → Ziel. Neue Dateien werden hinzugefügt.
+Ändert sich nur die Quelle, wird das Ziel nach Prüfung aktualisiert. Vorher
+wird seine bisherige Version gesichert. Bestehende Dateien werden nicht gelöscht.
+Eine im Ziel gelöschte Datei wird beim nächsten Lauf erneut aus der Quelle kopiert.</p>
+</section><section class="topic"><h2 id="automatisch-arbeiten-und-pausieren">Automatisch arbeiten und pausieren</h2>
+<p>Die Option <strong>Automatisch synchronisieren alle</strong> aktiviert eine Aufgabe. Zur Wahl
+stehen 1, 5, 15, 30 und 60 Minuten. Bei gespeicherten Aufgaben werden Schalter und
+Intervall sofort gespeichert. Pfade und erweiterte Einstellungen werden mit
+<strong>Prüfen</strong> übernommen. Während der Bearbeitung oder einer offenen Vorschau haben
+manuelle Aktionen Vorrang; das Hintergrundprogramm arbeitet nach dem Verbergen
+des Fensters weiter.</p>
+<p>Neue Aufgaben verlangen standardmäßig fünf erfolgreiche manuelle Bestätigungen.
+Automatische Prüfungen schreiben in dieser Zeit nichts. <strong>Sicherheit und Versionen</strong>
+zeigt den Zähler. Dort lässt sich der Schutz abschalten oder auf fünf zurücksetzen.
+Anschließend <strong>Prüfen</strong> anklicken. Fehler, Abbrüche, Konflikte und noch belegte Dateien
+verbrauchen keine Bestätigung.</p>
+<p><strong>Pause</strong> stoppt die ausgewählte Aufgabe; <strong>Alle pausieren</strong> pausiert alle Aufgaben
+einschließlich manueller Synchronisierung, ohne deren einzelne Schalter zu ändern.
+Die bereits bearbeitete Datei wird fertiggestellt. Die globale Pause bleibt nach
+einem Neustart erhalten. Eine Prüfung ohne Kopieren bleibt möglich.</p>
+<p>Schließen und Minimieren verbergen das Fenster im Infobereich. Ein Doppelklick
+auf das Symbol öffnet es. <strong>Beenden</strong> im Symbolmenü schließt die Anwendung nach
+einem kontrollierten Stopp. Drehende Pfeile zeigen Arbeit, ein grünes Häkchen einen
+abgeschlossenen Lauf, Grau Pause und Gelb notwendigen Eingriff. Windows kann das
+Symbol unter dem kleinen Pfeil für ausgeblendete Symbole ablegen.</p>
+<p>Erfolgreiche Hintergrundläufe erzeugen keine Meldungsfenster. Gleiche Fehler
+werden nicht bei jeder Prüfung erneut gemeldet. Das Menü bietet einen freiwilligen
+Start mit Windows; dann startet die Anwendung im Infobereich.</p>
+</section><section class="topic"><h2 id="usb-konflikte-und-fruhere-versionen">USB, Konflikte und frühere Versionen</h2>
+<p>Beim normalen Start wächst ein kleiner Kaktus gleichmäßig in seinem Topf.
+Das dauert drei Sekunden; er bleibt
+danach eine Sekunde sichtbar. Ein Klick oder eine Taste
+stoppt auch das leise Blätterrascheln und
+überspringt die Animation. Bei deaktivierten Windows-Animationen erscheint er sofort;
+beim Start im Infobereich wird keine Startgrafik gezeigt. Das Symbol verbindet einen
+Kaktus mit zwei Pfeilen. Nur die Pfeile drehen sich während der Synchronisierung.</p>
+<p>Zum Zuordnen eines angeschlossenen Wechseldatenträgers Quelle und Ziel einstellen,
+<strong>Sicherheit und Versionen → Laufwerk zuordnen</strong> anklicken und mit <strong>Prüfen</strong>
+speichern. Nur die zugeordnete Datenträgerkennung löst einen sofortigen Start aus.
+Pause und Bestätigungsschutz gelten dabei weiter. Quelle und Ziel folgen jeweils
+der Seriennummer ihres Volumes, auch bei einem neuen Laufwerkbuchstaben. Fehlt das
+Volume oder melden zwei angeschlossene Volumes dieselbe Nummer, wird nicht
+geschrieben. Nach Formatierung neu zuordnen. Eine alte Zuordnung muss eventuell
+erneuert werden, wenn der Buchstabe bereits vor dem Update geändert wurde.
+Das Programm wirft keinen Datenträger aus.</p>
+<p>Unterschiedliche Änderungen auf beiden Seiten oder Dateien nur im Ziel werden
+als Konflikte angezeigt. Die Dateien bleiben zunächst erhalten. Vorhandene
+Konfliktzeilen auswählen und <strong>Quelle übernehmen</strong> anklicken: Zunächst ändert sich
+nur der Plan. <strong>Synchronisieren</strong> führt ihn aus und sichert die alte Zielversion.
+Mit <strong>Vergleichen</strong> werden beide Seiten mit Größe, Datum und Hash angezeigt.
+<strong>Ziel behalten</strong> merkt sich die Entscheidung, bis sich eine der Seiten ändert;
+mit <strong>Synchronisieren</strong> wird sie übernommen. <strong>Abbrechen</strong> lässt den Plan unverändert.
+Dateien nur im Ziel können nicht aus einer fehlenden Quelle ersetzt werden.
+Nicht ausgewählte Konflikte bleiben unverändert. Es gibt keine Rückkopie zur Quelle.</p>
+<p>Neue frühere Versionen liegen im Ziel unter <code>.SyncVersions/&lt;Aufgaben-ID&gt;</code>.
+Standardmäßig bleiben sieben Versionen je Datei; die Grenze ist zwischen 1 und 100
+einstellbar. Nach einem erfolgreichen Lauf werden überschüssige ältere Versionen
+dieser Aufgabe entfernt. <strong>Versionen</strong> stellt eine gewählte Version als neue Datei
+wieder her und überschreibt keine vorhandene Datei. Alte Versionen aus früheren
+Ausgaben bleiben im bisherigen lokalen Zustand lesbar und werden nicht automatisch
+gelöscht. Die Verlaufsansicht enthält manuelle und automatische Kopierläufe.</p>
+</section><section class="topic"><h2 id="installation-und-aktualisierung">Installation und Aktualisierung</h2>
+<p>Windows 10/11, x64. Die portable Ausgabe enthält die benötigte .NET-Laufzeit.
+Python, SDK, Visual Studio und eine Installation werden nicht benötigt.
+Die gesamte Programmmappe entpacken; die EXE zusammen mit ihren DLLs aufbewahren.
+Dann <code>KaktusBackupSync.exe</code> öffnen. Die EXE nicht einzeln verschieben.</p>
+<p>Die ZIP enthält bereits <code>portable.flag</code>. Aufgaben, Sprache, Verlauf und Cache liegen
+im Unterordner <code>runtime</code>, der beim Benutzen erstellt wird. Zum Umziehen die Anwendung
+über den Infobereich beenden und die gesamte Mappe samt runtime, DLLs und Assets kopieren.</p>
+<p>Frühere nicht portable Ausgaben nutzten <code>%LOCALAPPDATA%\AntonsBackupManager</code>.
+Zum Übernehmen beide Ausgaben beenden und den gesamten alten Zustand in einen
+neuen runtime-Ordner der portablen Kopie kopieren. Bestehende Zustände nicht mischen
+oder überschreiben. Weitere Hinweise stehen in START-HERE.txt.</p>
+<p>Ab preview.6 speichert die Anwendung Aufgaben im Format 2 mit beiden Zuordnungen.
+Format 1 wird automatisch gelesen. Ältere Ausgaben können Format 2 nicht lesen;
+für eine Rückkehr die gesamte vor dem Update gesicherte runtime-Mappe verwenden.</p>
+<p>Diese Programmmappe muss beschreibbar sein und außerhalb der gesicherten Ordner
+liegen. Beim Aktualisieren die Anwendung über den Infobereich beenden, die komplette
+Konfiguration samt <code>sync</code> und <code>reports</code> sichern und die neuen Programmdateien in
+denselben Programmordner übernehmen. Persönliche Daten gehören nicht ins öffentliche ZIP.</p>
+<p>Eine zweite Instanz dieser Ausgabe öffnet die erste. Ältere Ausgaben ohne diese
+Sperre vorher beenden. Autostart nach dem Verschieben der Programmmappe erneut setzen.
+Die drei letzten Sicherungen der Aufgabenkonfiguration liegen neben <code>tasks.json</code>.
+Bei einer beschädigten Konfiguration bleibt das Speichern gesperrt. Anwendung beenden,
+die beschädigte Datei separat sichern und eine geprüfte Sicherung als <code>tasks.json</code>
+zurückkopieren. Nicht im laufenden Betrieb Konfigurationsdateien austauschen.</p>
+</section><section class="topic"><h2 id="architektur-und-entwicklung">Architektur und Entwicklung</h2>
+<ul>
+<li><strong>Core</strong> enthält Aufgabenmodelle, Pfadregeln und den Vergleichsplan. Es führt
+keine Dateioperationen aus und kennt WPF nicht.</li>
+<li><strong>Infrastructure</strong> liest und prüft Dateien, schreibt sichere Kopien, verwaltet
+Versionen, Konfiguration, Berichte und Hash-Cache.</li>
+<li><strong>App</strong> enthält WPF und die Windows-Anbindung. <strong>MainViewModel</strong> koordiniert
+Befehle und Anzeigezustand. <strong>BackupWorkspace</strong> verwaltet gespeicherte Aufgaben
+und Dateiabläufe. Der Fenstercode behandelt Darstellung, Gesten und Windows-Ereignisse.</li>
+<li><strong>Tests</strong> prüft Regeln und echte Abläufe mit selbst erzeugten Beispieldateien.</li>
+</ul>
+<p>Die Entscheidung und ihre Ausführung sind getrennt: Prüfen → unveränderlicher
+Plan → Bestätigung → erneute Prüfung → temporäre Datei → geprüfte Übernahme.
+Kommentare erklären schwierige Entscheidungen auf einfachem Englisch.</p>
+<p>Mit .NET SDK 10.0.400 im Projektordner:</p>
+<pre><code class="language-powershell">dotnet test --project tests/AntonsBackupManager.Core.Tests -c Release
+dotnet build tests/AntonsBackupManager.UiCheck -c Release -o runtime/ui-check
+dotnet runtime/ui-check/AntonsBackupManager.UiCheck.dll runtime/ui-audit
+dotnet publish src/AntonsBackupManager.App -c Release -r win-x64 --self-contained true -o artifacts/release
+</code></pre>
+<p>Der erste Restore benötigt die Paketquelle. <code>runtime</code>, <code>artifacts</code>, Konfiguration,
+Berichte und private Arbeitsnotizen sind aus Git ausgeschlossen. Ein Commit ist
+ein lokaler gespeicherter Entwicklungsstand; ein Push veröffentlicht ihn auf einem
+Server. Vor einem Push Identität, Verlauf, Lizenz und Dateien gesondert prüfen.
+Die Quellen sind zum Betrachten vorgesehen; es wird keine offene Lizenz erteilt.</p>
+</section><section class="topic"><h2 id="datensicherheit-und-grenzen">Datensicherheit und Grenzen</h2>
+<p>Prüfungen erkennen OneDrive-Cloud-Metadaten und unterscheiden sie von Links.
+OneDrive kann beim Lesen bisher nicht lokal gespeicherte Dateien herunterladen;
+dafür muss der Anbieter verfügbar sein. Symlinks, Junctions und unbekannte
+Umleitungstypen werden abgelehnt. Quellen dürfen sich überschneiden; Ziele und
+Quelle-Ziel-Paare verschiedener Aufgaben dürfen sich nicht überschneiden.</p>
+<p>Manuelle Prüfungen lesen alle Dateiinhalte. Automatische Prüfungen verwenden bekannte
+Hashes bei unveränderter Größe und Änderungszeit und lesen standardmäßig stündlich
+alles neu. Eine versteckte Änderung bei identischen Metadaten kann daher erst bei
+der Vollprüfung auffallen. Vor einer tatsächlichen Dateiänderung wird der Inhalt
+immer erneut geprüft. Der Cache ersetzt diese Schreibprüfung nicht.</p>
+<p>Ein Lauf ist keine Gesamttransaktion: bereits kopierte Dateien bleiben nach einer
+Unterbrechung erhalten. Stromausfall, volle Laufwerke, Hardwarefehler und mutwillige
+Verzeichnisänderungen durch andere Prozesse sind nicht vollständig abgesichert.
+Eine durch ein anderes Programm gesperrte Datei wird zurückgestellt. Andere Dateien
+werden weiter bearbeitet. Die Historie zeigt den Dateipfad gelb; der nächste Lauf
+versucht es erneut. Zugriffsfehler und fehlende Datenträger stoppen weiterhin den Lauf.
+Geprüft wurden simulierte Fehler für vollen Speicher und fehlende Geräte, Abbruch
+innerhalb einer großen Datei sowie das erzwungene Beenden eines eigenen Testprozesses.
+Geprüfte Zwischenkopien liegen im reservierten Ordner <code>.SyncWork</code>. Beim nächsten
+Schreiben werden eigene verwaiste Dateien unter exklusiver Sperre bereinigt.
+Dort keine persönlichen Dateien ablegen. Das alte Ziel bleibt bis zum geprüften
+Ersetzen erhalten. Physische USB-Unterbrechung, echter Stromausfall und ein sauberes
+zweites Windows-System sind noch nicht geprüft. Erweiterte Netzwerk-, DPI- und
+Zugänglichkeitsprüfungen gehören nicht zu diesem Schritt. Es bleibt eine Vorabversion.</p>
+<p>Bei einer eindeutigen Umbenennung stimmen Größe und SHA-256 mit genau einer
+unveränderten, früher gesicherten Zieldatei überein. Die Vorschau zeigt alten und
+neuen Pfad. Das Ziel wird ohne neue Version umbenannt. Mehrdeutige gleiche Inhalte,
+und geänderte Ziele werden nicht automatisch umbenannt. Eine Änderung nur der
+Groß-/Kleinschreibung eines Dateinamens wird unterstützt, etwa <code>Foto.jpg</code> → <code>foto.jpg</code>.
+Die Schreibweise übergeordneter Ordner bleibt erhalten. Eine erneute Namensänderung
+nach der Vorschau verlangt einen neuen Plan. Dateien ohne sichere Zuordnung bleiben
+neue Dateien oder Konflikte.</p>
+</section><section class="topic"><h2 id="kurze-demonstration">Kurze Demonstration</h2>
+<p><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/images/manual/startup.png" alt="Startbildschirm mit dem freigegebenen Kaktus-Maskottchen." /></p>
+<p>Die vom Eigentümer zur Weitergabe freigegebene Aufnahme ist im Quelltextpaket
+und im portablen ZIP enthalten. Sie ist zur Laufzeit optional. Siehe
+<code>ASSET-NOTICES.md</code> und die <a href="https://github.com/popovantondev/Kaktus-Backup-Sync/blob/main/docs/SOURCE-PACKAGE.md">Anleitung zum Quelltextpaket</a>.</p>
+<p>Zwei leere Beispielordner außerhalb der Programmmappe anlegen. Die erfundenen
+Dateien aus <code>demo/Source</code> in den Quellordner übernehmen. Eine Aufgabe erstellen,
+prüfen, synchronisieren. Eine Textdatei der Quelle ändern und erneut synchronisieren.
+Die vorige Fassung über <strong>Versionen</strong> als neue Datei wiederherstellen. Zuletzt die
+globale Pause und den Tray zeigen. Für öffentliche Bilder ausschließlich fiktive
+Pfade und Dateinamen verwenden.</p>
+</section></main><footer>Vorschauversion · <a href="https://github.com/popovantondev/Kaktus-Backup-Sync">GitHub</a> · <a href="https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose">Rückmeldung</a></footer></div></body></html>

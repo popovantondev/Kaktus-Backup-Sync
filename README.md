@@ -35,15 +35,21 @@ Aktualisierungen sichern frühere Versionen im Ziel; standardmäßig bleiben sie
 Versionen je Datei. Konfiguration, Verlauf, OneDrive-Metadaten und gebundene
 Wechseldatenträger werden unterstützt.
 
-## Dokumentation
+## Benutzerhandbücher
 
-- [Handbuch: Bedienung, Installation, Architektur, Entwicklung und Grenzen](docs/HANDBUCH.de.md)
-- [Release audit and unfinished work](docs/RELEASE_AUDIT.md)
-- [Сверка требований](docs/REQUIREMENTS_STATUS.ru.md)
+- [Deutsches Benutzerhandbuch](docs/HANDBUCH.de.md)
+- [English quick guide](docs/README.en.md)
+- [Русское краткое руководство](docs/README.ru.md)
+- [Portable-Kurzanleitung](docs/START-HERE.txt)
 - [Changelog](CHANGELOG.md)
+
+## Entwicklung und Wartungsunterlagen
+
 - [Architektur in drei Sprachen](docs/ARCHITECTURE.md)
-- [Sauberes Quelltextpaket und GitHub](docs/SOURCE-PACKAGE.md)
-- [Карта проекта и локальных выпусков](docs/PROJECT_MAP.ru.md)
+- [Hinweise zum Quelltextpaket](docs/SOURCE-PACKAGE.md)
+- [Historischer lokaler Release-Audit](docs/RELEASE_AUDIT.md)
+- [Сверка требований](docs/REQUIREMENTS_STATUS.ru.md)
+- [Карта проекта и опубликованных локальных выпусков](docs/PROJECT_MAP.ru.md)
 
 ## Datenschutz
 

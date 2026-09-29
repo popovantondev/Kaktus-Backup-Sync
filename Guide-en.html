@@ -1,0 +1,144 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071a35"><meta name="description" content="Create clear backup tasks and synchronize selected folders with reviewable, recoverable operations."><title>Kaktus Backup &amp;amp; Sync — USER GUIDE</title><style>:root{--ink:#14253d;--muted:#607087;--line:#dbe4f0;--blue:#1677ff;--panel:#fff;--canvas:#f3f6fb}
+*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font:16px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:#075dd1;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#003c91}.shell{width:min(100% - 36px,1000px);margin:0 auto;padding:24px 0 56px}.top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:20px}.brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:750;text-decoration:none}.brand-mark{display:grid;width:38px;height:38px;place-items:center;border-radius:12px;background:#e6f0ff;color:#075dd1;font-size:18px;font-weight:800}.brand img{width:38px;height:38px;object-fit:contain}nav{display:flex;gap:8px;flex-wrap:wrap}nav a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#34445b;text-decoration:none;font-size:14px;font-weight:650}nav a[aria-current=page]{background:#e6f0ff;border-color:#b8d3ff;color:#075dd1}.hero{display:grid;grid-template-columns:1fr 104px;gap:24px;align-items:center;padding:38px 42px;border-radius:28px;background:radial-gradient(circle at 90% 10%,#1f5cad 0,#102c55 34%,#07172e 76%);color:#fff;box-shadow:0 16px 38px #0b2b551f}.kicker{margin:0 0 8px;color:#9bc5ff;font-size:12px;letter-spacing:.14em;font-weight:750}.meta{margin:12px 0 0;color:#c7dcfa;font-size:14px;font-weight:650}h1{margin:0;font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-.03em}.lead{max-width:720px;margin:15px 0 0;color:#e2edff;font-size:18px;line-height:1.55}.brand-mark-large{display:grid;width:92px;height:92px;place-items:center;border:1px solid #ffffff42;border-radius:24px;background:#ffffff12;color:#fff;font-size:38px;font-weight:800}.button{display:inline-block;margin-top:19px;padding:10px 16px;border:1px solid #ffffff5c;border-radius:12px;background:#fff;color:#0c315e;font-weight:700;text-decoration:none}.overview,.topic{margin:16px 0;padding:26px 30px;background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:0 5px 16px #0b2b5507}.overview p:first-child{margin-top:0}.overview img{display:block;max-width:100%;height:auto;margin:16px auto;border:1px solid var(--line);border-radius:12px}.overview table,.topic table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse}.overview th,.overview td,.topic th,.topic td{padding:8px 10px;border:1px solid var(--line);text-align:left}.topic h2{margin:0 0 12px;font-size:22px;line-height:1.3;letter-spacing:-.015em}.topic h3{margin:22px 0 8px;font-size:18px;line-height:1.35}.topic p{margin:0 0 12px}.topic p:last-child{margin-bottom:0}.topic ul,.topic ol{padding-left:1.35em}.topic li{margin:.35em 0}.topic th{background:#eef4fc}.topic pre{max-width:100%;overflow:auto;padding:16px;border-radius:12px;background:#0b1b31;color:#e5efff}.topic code{padding:.12em .35em;border-radius:5px;background:#edf2f8}.topic pre code{padding:0;background:transparent;color:inherit}.topic blockquote{margin:12px 0;padding:4px 16px;border-left:3px solid #8bbaff;color:var(--muted)}footer{margin-top:24px;padding:20px 10px;color:var(--muted);text-align:center;font-size:14px}@media(max-width:620px){.shell{width:min(100% - 22px,1000px);padding-top:12px}.top{align-items:flex-start;flex-direction:column}.hero{grid-template-columns:1fr 66px;padding:26px 22px;border-radius:20px;gap:12px}.brand-mark-large{width:66px;height:66px;font-size:28px;border-radius:18px}.lead{font-size:16px}.overview,.topic{padding:21px 19px}}@media print{body{background:#fff}.shell{width:100%;padding:0}.top nav,.button{break-inside:avoid}.hero,.topic,.overview{box-shadow:none}.topic{break-inside:avoid}}</style></head><body><div class="shell"><header class="top"><a class="brand" href="Guide-en.html"><span class="brand-mark" aria-hidden="true">K</span><span>Kaktus Backup &amp; Sync</span></a><nav aria-label="Language"><a href="Guide-de.html">Deutsch</a><a href="Guide-en.html" aria-current="page">English</a><a href="Guide-ru.html">Русский</a></nav></header><main><section class="hero"><div><p class="kicker">USER GUIDE &#183; Windows &#183; Preview 5.2.0-preview.7</p><h1>Kaktus Backup &amp; Sync</h1><p class="lead">Create clear backup tasks and synchronize selected folders with reviewable, recoverable operations.</p><p class="meta">Windows &#183; Preview 5.2.0-preview.7</p><a class="button" href="https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7">Get preview</a></div><div class="brand-mark-large" aria-hidden="true">K</div></section><section class="overview">
+<p><a href="Guide-de.html">Deutsch</a> · <a href="Guide-en.html">English</a> · <a href="Guide-ru.html">Русский</a></p>
+<p><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/images/manual/en-main.png" alt="Main window in English; folder names and files are fictional." /></p>
+<p>The language picker also updates the tray menu and tooltip. New notifications
+use the selected language. Notifications already displayed by Windows retain
+their previous text.</p>
+<p>Error guidance and already visible details also change language. Do not include
+the running portable app's folder in a task: its working data changes while running.
+Keep the app outside synchronized folders. To copy the app itself, exit through
+the tray and copy its entire folder in File Explorer.</p>
+</section><section class="topic"><h2 id="create-and-run-a-task">Create and run a task</h2>
+<p>Choose <strong>New task</strong>, enter a name, source and existing destination. <strong>Browse</strong>
+starts in the folder already entered; <strong>Open folder</strong> opens that folder in Explorer.
+<strong>Preview</strong> validates and saves the task, including an empty source, then displays
+the plan. Errors appear with details in the preview area. Preview does not change
+your source or destination files. <strong>Synchronize</strong> runs the reviewed plan after confirmation.</p>
+<p>The direction is source → destination. New files are added. Source-only changes
+update the destination after preserving its old version. Files are never copied
+back to the source. Deleting a destination file causes it to be copied again.
+The program does not delete working destination files.</p>
+</section><section class="topic"><h2 id="automation-pause-and-tray">Automation, pause and tray</h2>
+<p>Enable <strong>Automatically synchronize every</strong> and select 1, 5, 15, 30 or 60 minutes.
+For saved tasks, enable/pause and interval changes save immediately. Apply changed
+paths and advanced settings with <strong>Preview</strong>. Editing and an open reviewed plan
+take priority over background runs; hiding the window lets background work continue.</p>
+<p>New tasks require five successful manual confirmations by default. Automatic
+checks do not write until those confirmations are completed. <strong>Safety and versions</strong>
+shows the remaining count; you can disable protection or reset it to five, then
+apply the change with <strong>Preview</strong>. Errors and cancellation do not consume a confirmation.</p>
+<p><strong>Pause task</strong> pauses one task. <strong>Pause all tasks</strong> pauses all synchronization,
+including manual runs, without changing individual task switches. The current
+file finishes first. Global pause survives restarting; read-only preview remains
+available. Closing or minimizing hides the app in the notification area. Double-click
+its icon to return; use its <strong>Exit</strong> menu to stop safely. Rotating arrows mean work,
+a green check means a completed run, gray means pause and yellow means attention.
+Windows may place the icon in its hidden-icons menu. Successful background runs
+are silent; repeated identical failures are deduplicated. Optional Windows startup
+is available in the tray menu and starts the app hidden.</p>
+</section><section class="topic"><h2 id="removable-drives-conflicts-and-recovery">Removable drives, conflicts and recovery</h2>
+<p>Set the folders, open <strong>Safety and versions</strong>, choose <strong>Bind drive</strong>, then <strong>Preview</strong>.
+An arrival event for that bound removable volume triggers a run immediately, subject
+to pause and confirmation protection. Source and destination bindings follow the
+volume serial number when drive letters change. A missing or duplicate serial
+blocks writes. Rebind after formatting. A legacy binding may need to be assigned
+again if the letter changed before upgrading. The application never ejects the drive.</p>
+<p>Different changes on both sides and files found only at the destination are
+conflicts. Select appropriate conflict rows and choose <strong>Use source</strong>. This changes
+the plan first; <strong>Synchronize</strong> applies it and keeps the previous destination version.
+<strong>Compare</strong> shows both sides with size, date and hash. <strong>Keep destination</strong> is
+remembered until either side changes; apply it with <strong>Synchronize</strong>. Cancel leaves
+the plan unchanged. Unselected conflicts stay unchanged. A destination-only file cannot be replaced
+from a missing source. There is no reverse copying to the source.</p>
+<p>New old versions live under <code>.SyncVersions/&lt;task-ID&gt;</code> at the destination. The
+default limit is seven per file, configurable from 1 to 100. After a successful run,
+older excess versions belonging to that task are removed. <strong>Versions</strong> exports a
+verified version as a new file without overwriting an existing one. Legacy versions
+from earlier builds remain readable in the old local state and are not automatically
+deleted. <strong>History</strong> lists manual and automatic copy runs.</p>
+</section><section class="topic"><h2 id="install-portable-mode-and-updates">Install, portable mode and updates</h2>
+<p>Windows 10/11 x64. The portable release includes its .NET runtime and needs no
+Python, SDK, Visual Studio or installer. Extract the complete
+folder and run <code>KaktusBackupSync.exe</code>; keep its DLL files with it.</p>
+<p>The ZIP already contains <code>portable.flag</code>. Tasks, language, history and cache live
+in the adjacent <code>runtime</code>, created when the app is used. To move the app, exit
+through the tray and copy the entire folder, including runtime, DLLs and Assets.</p>
+<p>Earlier non-portable builds used <code>%LOCALAPPDATA%\AntonsBackupManager</code>. To preserve
+old tasks, close both builds and copy that entire state into a new runtime folder
+in the portable copy. Do not merge or overwrite existing state. See START-HERE.txt.</p>
+<p>From preview.6, tasks are saved as schema 2 with both endpoint bindings. Schema 1
+is read automatically. Older builds cannot read schema 2; downgrade only with a
+complete runtime backup made before the update.</p>
+<p>The application folder must be writable and
+outside the folders being backed up. Before updating, exit from the tray, back up
+the complete state including <code>sync</code> and <code>reports</code>, and replace program files in
+the same installation folder. Never include personal state in the public ZIP.
+A second instance of this build opens the first. Close older builds without the
+instance lock beforehand. Reset optional startup after moving the program.</p>
+<p>The last three dated configuration backups are kept beside <code>tasks.json</code>. If the
+catalog is damaged, saving is blocked. Exit the app, preserve the damaged file
+separately, and copy a verified backup back as <code>tasks.json</code>. Do not edit state files
+while synchronization is running.</p>
+</section><section class="topic"><h2 id="architecture-and-development">Architecture and development</h2>
+<p><strong>Core</strong> contains models, path rules and comparison decisions with no file I/O or
+WPF. <strong>Infrastructure</strong> scans, hashes, safely writes files and stores versions,
+configuration, history and cache. <strong>App</strong> contains WPF, editor/card ViewModels, tray
+and Windows integration. <strong>MainViewModel</strong> coordinates commands and presentation;
+<strong>BackupWorkspace</strong> owns task persistence and file workflows. Window code handles
+rendering, gestures and Windows events. <strong>Tests</strong> uses disposable fictional data.</p>
+<p>The flow is preview → immutable plan → confirmation → revalidation → temporary
+file → verified replacement. Comments explain non-obvious decisions in simple English.</p>
+<p>With .NET SDK 10.0.400 in the repository:</p>
+<pre><code class="language-powershell">dotnet test --project tests/AntonsBackupManager.Core.Tests -c Release
+dotnet build tests/AntonsBackupManager.UiCheck -c Release -o runtime/ui-check
+dotnet runtime/ui-check/AntonsBackupManager.UiCheck.dll runtime/ui-audit
+dotnet publish src/AntonsBackupManager.App -c Release -r win-x64 --self-contained true -o artifacts/release
+</code></pre>
+<p>Initial restore requires package access. Runtime files, artifacts, private notes
+and personal configuration are excluded from Git. A commit records a local code
+snapshot; a push sends it to a server. Review author identity, history, license and
+files before publishing. The source is available for viewing with no open-source
+license granted.</p>
+</section><section class="topic"><h2 id="safety-and-limits">Safety and limits</h2>
+<p>OneDrive cloud metadata is accepted; links, junctions and unknown redirection tags
+are rejected. Reading online-only files may require OneDrive to download them.
+Source folders may overlap. Destinations and cross-task source/destination pairs
+must not overlap.</p>
+<p>Manual preview hashes all content. Automatic checks reuse known hashes when size
+and modification time match, with a full scan each hour by default. Hidden changes
+preserving both metadata values may only be detected by a full check. Before any
+actual file replacement or copy, content is independently verified again.</p>
+<p>A run is not one transaction. Completed copies remain after interruption and are
+reported. Sharing-locked files are deferred while other files continue. History
+shows their paths in amber; the next run retries them. Access denial and unavailable
+drives still stop the run. Conflicts and deferred files do not consume a safety
+confirmation. Tests cover injected disk-full/device errors, cancellation within a
+large file and abrupt termination of an owned test process. Verified temporary
+copies live in reserved <code>.SyncWork</code> folders. A subsequent write cleans abandoned
+owned files under an exclusive lock. Do not place personal files there. The old
+destination stays intact until verified replacement. Physical USB disconnection,
+actual power loss and clean-machine installation remain untested. Expanded network,
+display-scaling and accessibility checks are outside this stage. This is a preview.</p>
+<p>An unambiguous rename matches size and SHA-256 with exactly one unchanged destination
+file from the previous baseline. Preview shows both paths; synchronization renames
+the destination without a new version. Duplicate-content ambiguity and changed
+targets are not automatically renamed. Case-only filename changes are supported,
+such as <code>Photo.jpg</code> → <code>photo.jpg</code>; parent-directory case is not changed. Another
+filename change after preview requires a fresh plan. Files without a reliable match
+remain new files or conflicts.</p>
+</section><section class="topic"><h2 id="demonstration">Demonstration</h2>
+<p><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/images/manual/startup.png" alt="Startup screen with the approved Kaktus mascot." /></p>
+<p>The owner-approved leaf-rustling recording is included in the source snapshot and
+portable package. It is optional at runtime. See <code>ASSET-NOTICES.md</code> and the
+<a href="https://github.com/popovantondev/Kaktus-Backup-Sync/blob/main/docs/SOURCE-PACKAGE.md">source package guide</a>.</p>
+<p>On an ordinary launch a small cactus grows proportionally in its pot over three seconds, then
+stays on screen for one second. Soft leaf rustling accompanies the growth.
+Click or press a key to skip and stop the sound. Reduced Windows
+animation settings are respected. Tray-only
+launches show no intro. The cactus stays still in the tray while the arrows rotate.</p>
+<p>Create two disposable folders outside the installation. Put the fictional files
+from <code>demo/Source</code> in the source. Create, preview and synchronize a task. Edit a source
+text file, synchronize again and restore its old version to a new file. Show global
+pause and the tray. Public screenshots must use fictional paths and filenames only.</p>
+</section></main><footer>Preview release · <a href="https://github.com/popovantondev/Kaktus-Backup-Sync">GitHub</a> · <a href="https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose">Feedback</a></footer></div></body></html>

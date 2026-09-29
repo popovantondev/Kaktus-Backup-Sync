@@ -17,9 +17,11 @@
 
 ## Текущие выпуски
 
-- `Kaktus-Backup-Sync-Portable-5.2-preview.7.zip` — актуальный пакет (будет пересобран с разрешённой записью).
-- `Kaktus-Backup-Sync-Portable-5.2-preview.7.zip` — готовящийся переносной ZIP для GitHub с утверждённым маскотом и звуком.
-- `Kaktus-Backup-Sync-Source-5.2-preview.7.zip` — чистый снимок исходников для GitHub без Git-истории и пользовательского состояния.
+- `Kaktus-Backup-Sync-Portable-5.2-preview.7.zip` — опубликованный переносной архив Windows x64.
+- `Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256` — опубликованная контрольная сумма приложения.
+- `Kaktus-Backup-Sync-Source-5.2-preview.7.zip` и соответствующий `.sha256` — опубликованный архив исходников и его контрольная сумма.
+
+Файлы перечислены в [опубликованном GitHub-выпуске v5.2.0-preview.7](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7). Это предварительный, а не стабильный выпуск; см. его примечания и ограничения проверок.
 
 Ранние preview 1–5 не являются текущими выпусками. Перед перемещением в
 `Корзина_на_проверку` обязательно проверить отсутствие в них `runtime/tasks.json`
