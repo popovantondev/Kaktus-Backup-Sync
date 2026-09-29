@@ -11,7 +11,7 @@
    <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="300"/></Grid.ColumnDefinitions>
    <StackPanel VerticalAlignment="Center" Margin="36,0,0,0">
     <TextBlock Text="Kaktus" FontFamily="Segoe UI" FontSize="43" FontWeight="SemiBold" Foreground="#14253D"/>
-    <TextBlock Text="Backup &amp; Sync" FontFamily="Segoe UI" FontSize="22" Foreground="#1677FF" Margin="0,4,0,0"/>
+    <TextBlock Text="Backup &amp; Sync" FontFamily="Segoe UI" FontSize="22" Foreground="#075DD1" Margin="0,4,0,0"/>
     <Border Width="44" Height="4" Background="#9BC5FF" CornerRadius="2" HorizontalAlignment="Left" Margin="0,24,0,18"/>
     <TextBlock Text="5.2 · Preview" FontFamily="Segoe UI" FontSize="13" Foreground="#607087"/>
    </StackPanel>
