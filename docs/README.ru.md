@@ -1,6 +1,22 @@
 # Kaktus Backup & Sync 5.2
 
-[Руководство пользователя](https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-ru.html)
+<!-- public-release:start -->
+Выполняет одностороннее резервное копирование папок с предварительным просмотром и сохранением предыдущих версий.
+
+**Windows · x64 · Предварительный выпуск 5.2.0-preview.7**
+
+**[Скачать](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7)** · **[Инструкция](https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-ru.html)** · **[Сообщить об ошибке](https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose)**
+
+**Требования и ограничения:** Portable-пакет содержит .NET. Установка Python и SDK не нужна. Это предварительный выпуск.
+
+**Первые шаги:** Распакуйте ZIP целиком и откройте KaktusBackupSync.exe. Выберите источник и цель, проверьте план перед синхронизацией.
+
+**Файлы приложения:**
+
+- [`Kaktus-Backup-Sync-Portable-5.2-preview.7.zip`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip)
+
+**Контрольные суммы:** [`Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256) · [`Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256)
+<!-- public-release:end -->
 
 В preview.7 утверждённый маскот используется во всех значках и окнах; добавлены
 скриншоты руководств на нужном языке и проверки фоновых уведомлений.
@@ -10,7 +26,7 @@
 
 **Windows x64 · переносимый ZIP · .NET уже включён**
 
-- [Релизы и SHA-256](https://github.com/popovantondev/Kaktus-Backup-Sync/releases)
+- [Релизы и SHA-256](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7)
 - [Руководство](MANUAL.ru.md) · [Обратная связь](https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose)
 
 Предварительная Windows-программа для односторонней синхронизации: просмотр плана,

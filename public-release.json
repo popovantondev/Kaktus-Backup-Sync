@@ -1,0 +1,99 @@
+{
+  "name": "Kaktus Backup & Sync",
+  "version": "5.2.0-preview.7",
+  "platform": "Windows · x64",
+  "tag": "v5.2.0-preview.7",
+  "description": {
+    "ru": "Выполняет одностороннее резервное копирование папок с предварительным просмотром и сохранением предыдущих версий.",
+    "de": "Einseitige Ordnersicherung mit Vorschau und Aufbewahrung früherer Dateiversionen.",
+    "en": "One-way folder backup with a preview and preserved previous file versions."
+  },
+  "requirements": {
+    "ru": "Portable-пакет содержит .NET. Установка Python и SDK не нужна. Это предварительный выпуск.",
+    "de": "Portable-Paket enthält .NET; Python und SDK sind nicht nötig. Dies ist eine Vorabversion.",
+    "en": "Portable package includes .NET; Python and an SDK are not needed. This is a preview release."
+  },
+  "start": {
+    "ru": "Распакуйте ZIP целиком и откройте KaktusBackupSync.exe. Выберите источник и цель, проверьте план перед синхронизацией.",
+    "de": "ZIP vollständig entpacken und KaktusBackupSync.exe öffnen. Quelle und Ziel wählen, den Plan vor der Synchronisierung prüfen.",
+    "en": "Extract the entire ZIP and open KaktusBackupSync.exe. Choose source and target, then review the plan before syncing."
+  },
+  "schema_version": 1,
+  "repo": "Kaktus-Backup-Sync",
+  "source_url": "https://github.com/popovantondev/Kaktus-Backup-Sync",
+  "readmes": {
+    "de": [
+      "README.md"
+    ],
+    "en": [
+      "docs/README.en.md"
+    ],
+    "ru": [
+      "docs/README.ru.md"
+    ]
+  },
+  "guides": {
+    "ru": "Guide-ru.html",
+    "de": "Guide-de.html",
+    "en": "Guide-en.html"
+  },
+  "help_url": "https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-{lang}.html",
+  "feedback_url": "https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose",
+  "status": "preview",
+  "release_url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7",
+  "assets": [
+    {
+      "name": "de-main.png",
+      "size": 108526,
+      "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/de-main.png"
+    },
+    {
+      "name": "en-main.png",
+      "size": 106765,
+      "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/en-main.png"
+    },
+    {
+      "name": "Kaktus-Backup-Sync-Portable-5.2-preview.7.zip",
+      "size": 84835499,
+      "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip"
+    },
+    {
+      "name": "Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256",
+      "size": 112,
+      "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256"
+    },
+    {
+      "name": "Kaktus-Backup-Sync-Source-5.2-preview.7.zip",
+      "size": 1943011,
+      "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Source-5.2-preview.7.zip"
+    },
+    {
+      "name": "Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256",
+      "size": 110,
+      "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256"
+    },
+    {
+      "name": "ru-main.png",
+      "size": 115217,
+      "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/ru-main.png"
+    },
+    {
+      "name": "startup.png",
+      "size": 66221,
+      "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/startup.png"
+    }
+  ],
+  "downloads": [
+    "Kaktus-Backup-Sync-Portable-5.2-preview.7.zip"
+  ],
+  "checksums": [
+    "Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256",
+    "Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256"
+  ],
+  "version_files": [
+    {
+      "path": "src/AntonsBackupManager.App/AntonsBackupManager.App.csproj",
+      "pattern": "<Version>([^<]+)</Version>"
+    }
+  ]
+}
