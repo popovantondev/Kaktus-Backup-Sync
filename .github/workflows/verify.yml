@@ -24,3 +24,11 @@ jobs:
         run: dotnet runtime/ci-check/AntonsBackupManager.UiCheck.dll runtime/ci-audit --workflows-only
       - name: Check recovery after owned-process termination
         run: dotnet runtime/ci-check/AntonsBackupManager.UiCheck.dll --crash-check
+      - name: Save synthetic diagnostic results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: workflow-diagnostics-${{ github.run_id }}
+          path: runtime/ci-audit/
+          if-no-files-found: warn
+          retention-days: 14

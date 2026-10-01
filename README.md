@@ -1,12 +1,28 @@
 # Kaktus Backup & Sync 5.2
 
-[Benutzerhandbuch](https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-de.html)
+<!-- public-release:start -->
+Einseitige Ordnersicherung mit Vorschau und Aufbewahrung früherer Dateiversionen.
+
+**Windows · x64 · Vorabversion 5.2.0-preview.7**
+
+**[Herunterladen](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7)** · **[Anleitung](https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-de.html)** · **[Fehler melden](https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose)**
+
+**Voraussetzungen und Grenzen:** Portable-Paket enthält .NET; Python und SDK sind nicht nötig. Dies ist eine Vorabversion.
+
+**Erste Schritte:** ZIP vollständig entpacken und KaktusBackupSync.exe öffnen. Quelle und Ziel wählen, den Plan vor der Synchronisierung prüfen.
+
+**App-Dateien:**
+
+- [`Kaktus-Backup-Sync-Portable-5.2-preview.7.zip`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip)
+
+**Prüfsummen:** [`Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256) · [`Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256)
+<!-- public-release:end -->
 
 [Deutsch](README.md) · [English](docs/README.en.md) · [Русский](docs/README.ru.md)
 
 **Windows x64 · Portable ZIP · .NET-Laufzeit enthalten**
 
-- [Releases und SHA-256-Prüfsummen](https://github.com/popovantondev/Kaktus-Backup-Sync/releases)
+- [Releases und SHA-256-Prüfsummen](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7)
 - [Anleitung](docs/HANDBUCH.de.md) · [Rückmeldung](https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose)
 
 Windows-Vorabversion für einseitige Ordnersicherung: Vorschau, frühere Versionen,

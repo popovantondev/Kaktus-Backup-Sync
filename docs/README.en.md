@@ -1,6 +1,22 @@
 # Kaktus Backup & Sync 5.2
 
-[User guide](https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-en.html)
+<!-- public-release:start -->
+One-way folder backup with a preview and preserved previous file versions.
+
+**Windows · x64 · Preview 5.2.0-preview.7**
+
+**[Download](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7)** · **[User guide](https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-en.html)** · **[Report a problem](https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose)**
+
+**Requirements and limitations:** Portable package includes .NET; Python and an SDK are not needed. This is a preview release.
+
+**First steps:** Extract the entire ZIP and open KaktusBackupSync.exe. Choose source and target, then review the plan before syncing.
+
+**Application files:**
+
+- [`Kaktus-Backup-Sync-Portable-5.2-preview.7.zip`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip)
+
+**Checksums:** [`Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256) · [`Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256)
+<!-- public-release:end -->
 
 Preview.7 uses the approved mascot throughout the app and adds localized manual
 screenshots, tray notification checks and release packaging updates.
@@ -10,7 +26,7 @@ screenshots, tray notification checks and release packaging updates.
 
 **Windows x64 · Portable ZIP · .NET runtime included**
 
-- [Releases and SHA-256 checksums](https://github.com/popovantondev/Kaktus-Backup-Sync/releases)
+- [Releases and SHA-256 checksums](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7)
 - [User manual](MANUAL.en.md) · [Feedback](https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose)
 
 A Windows preview for one-way backup with preview, previous versions, automatic
