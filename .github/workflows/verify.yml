@@ -26,7 +26,7 @@ jobs:
         run: dotnet runtime/ci-check/AntonsBackupManager.UiCheck.dll --crash-check
       - name: Save synthetic diagnostic results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: workflow-diagnostics-${{ github.run_id }}
           path: runtime/ci-audit/
