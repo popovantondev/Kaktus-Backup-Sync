@@ -13,6 +13,12 @@ class PublicDocsTests(unittest.TestCase):
     def tearDown(self):docs.ROOT=self.previous;self.temp.cleanup()
     def check(self):return docs.validate(self.data,self.files)
     def test_valid_metadata(self):self.assertEqual(self.check(),[])
+    def test_guide_title_escapes_canonical_name_once(self):
+        self.data.update(name='Example & Test',readmes={},guides={'en':'Guide-en.html'})
+        (docs.ROOT/'Guide-en.html').write_text('<title>Example &amp;amp; Test — USER GUIDE</title><style></style><section class="hero">Intro</section>',encoding='utf-8')
+        page=docs.generated_app(self.data)['Guide-en.html']
+        self.assertIn('<title>Example &amp; Test — USER GUIDE</title>',page)
+        self.assertNotIn('&amp;amp;',page)
     def test_summary_drift(self):
         (docs.ROOT/'README.md').write_text('changed');self.assertTrue(any('regenerate' in e for e in self.check()))
     def test_version_drift(self):
@@ -22,13 +28,13 @@ class PublicDocsTests(unittest.TestCase):
     def test_source_only_download(self):
         self.data['downloads']=['app.zip'];self.assertTrue(any('source-only' in e for e in self.check()))
     def test_missing_image(self):
-        (docs.ROOT/'README.md').write_text(self.files['README.md']+'\n![Example](missing.png)');self.assertTrue(any('missing image' in e for e in self.check()))
+        (docs.ROOT/'README.md').write_text(self.files['README.md']+'\n![Example](missing.png)',encoding='utf-8');self.assertTrue(any('missing image' in e for e in self.check()))
     def test_missing_local_document(self):
-        (docs.ROOT/'README.md').write_text(self.files['README.md']+'\n[Setup](missing.md)');self.assertTrue(any('missing local link' in e for e in self.check()))
+        (docs.ROOT/'README.md').write_text(self.files['README.md']+'\n[Setup](missing.md)',encoding='utf-8');self.assertTrue(any('missing local link' in e for e in self.check()))
     def test_production_credit(self):
-        (docs.ROOT/'README.md').write_text(self.files['README.md']+'\nCreated with ChatGPT');self.assertTrue(any('production content' in e for e in self.check()))
+        (docs.ROOT/'README.md').write_text(self.files['README.md']+'\nCreated with ChatGPT',encoding='utf-8');self.assertTrue(any('production content' in e for e in self.check()))
     def test_functional_codex_reference_allowed(self):
-        text=self.files['README.md']+'\nRuns approved tasks through Codex.';self.files['README.md']=text;(docs.ROOT/'README.md').write_text(text);self.assertEqual(self.check(),[])
+        text=self.files['README.md']+'\nRuns approved tasks through Codex.';self.files['README.md']=text;(docs.ROOT/'README.md').write_text(text,encoding='utf-8');self.assertEqual(self.check(),[])
     def test_internal_instruction_file(self):
         (docs.ROOT/'AGENTS.md').write_text('Internal notes');self.assertTrue(any('Internal document' in e for e in self.check()))
     def test_missing_translation(self):
