@@ -52,7 +52,10 @@ def generated_app(d):
                 new=text[:match.end()]+'\n\n'+markdown(d,l)+text[match.end():]
             generated[name]=new
     for l,name in d['guides'].items():
-        text=(ROOT/name).read_text(encoding='utf-8');new=replace_block(text,html_summary(d,l))
+        text=(ROOT/name).read_text(encoding='utf-8')
+        # Metadata contains plain text. Escape the canonical title once.
+        text=re.sub(r'(<title>).*?( — )',lambda m:m[1]+escape(d['name'])+m[2],text,count=1)
+        new=replace_block(text,html_summary(d,l))
         if new is None:
             # Place the install summary after the hero, before screenshots and details.
             hero=re.search(r'<section\b[^>]*class="hero(?: [^"]*)?"[^>]*>.*?</section>',text,re.S)
