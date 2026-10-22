@@ -1,0 +1,32 @@
+{
+  "folder": ".",
+  "shots": {
+    "ru": "docs/images/manual/ru-main.png",
+    "de": "docs/images/manual/de-main.png",
+    "en": "docs/images/manual/en-main.png"
+  },
+  "icon": "presentation-icon.png",
+  "palette": {
+    "accent": "#38723c",
+    "tint": "#edf4e7",
+    "hero": "#193b28",
+    "hero-end": "#3d6c4a"
+  },
+  "flow": {
+    "ru": [
+      "Выбрать источник",
+      "Проверить предпросмотр",
+      "Создать одностороннюю копию"
+    ],
+    "de": [
+      "Quelle auswählen",
+      "Vorschau prüfen",
+      "Einseitige Sicherung erstellen"
+    ],
+    "en": [
+      "Select a source",
+      "Review the preview",
+      "Create a one-way backup"
+    ]
+  }
+}
