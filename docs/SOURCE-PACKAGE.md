@@ -4,7 +4,7 @@
 
 `tools/Export-Source.ps1` erstellt aus einem geprüften, sauberen lokalen Commit ein
 ZIP und eine entpackte Kopie. Es enthält keine Git-Historie, Aufgaben, Berichte,
-Arbeitsnotizen oder private Daten. Die vom Eigentümer zur Weitergabe freigegebene
+Arbeitsnotizen oder private Daten. Die zur Weitergabe freigegebene
 Startaufnahme ist enthalten. Das freigegebene Maskottchenbild gehört
 zum öffentlichen Quelltext; private Generierungsmetadaten sind entfernt. Die bestehende
 lokale Historie bleibt unverändert. Dieses Paket als Grundlage eines neuen öffentlichen Repositorys nutzen.
@@ -32,9 +32,9 @@ dotnet runtime/ui-check/AntonsBackupManager.UiCheck.dll --crash-check
 ./tools/Test-Package.ps1
 ```
 
-The export includes the approved raster mascot with its original image pixels,
+The export includes the raster mascot with its original image pixels,
 but without private generation metadata. It includes the startup recording;
-the owner confirmed permission to redistribute it. The recording remains optional
+the author confirmed permission to redistribute it. The recording remains optional
 at runtime. See
 the included ASSET-NOTICES.md, LICENSE, RIGHTS.md, and THIRD_PARTY_NOTICES.md.
 The private package containing that recording
@@ -50,9 +50,9 @@ stay in the local WPF harness. The workflow does not publish packages.
 ## Русский
 
 Для GitHub подготовлен отдельный снимок без старой истории с персональными данными
-автора, задач, журналов и приватных рабочих записей. В нём то же утверждённое
+автора, задач, журналов и приватных рабочих записей. В нём то же
 изображение маскота с исходными пикселями, но без приватных метаданных генерации.
-Предоставленная стартовая запись включена с разрешения владельца. Исходный репозиторий сохранён.
+Предоставленная стартовая запись включена с разрешения автора. Исходный репозиторий сохранён.
 Не загружайте вместо снимка его папку `.git` или используемую папку `runtime`.
 
 Распакуйте снимок и проверьте сборку. Готовой программе ничего доустанавливать не нужно;

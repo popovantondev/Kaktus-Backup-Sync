@@ -18,16 +18,16 @@
 **Контрольные суммы:** [`Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256) · [`Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256)
 <!-- public-release:end -->
 
-В preview.7 утверждённый маскот используется во всех значках и окнах; добавлены
+В preview.7 маскот используется во всех значках и окнах; добавлены
 скриншоты руководств на нужном языке и проверки фоновых уведомлений.
-[Архитектура](ARCHITECTURE.md) · [Исходники](SOURCE-PACKAGE.md).
+[Архитектура](docs/ARCHITECTURE.md) · [Исходники](docs/SOURCE-PACKAGE.md).
 
-[Deutsch](../README.md) · [English](README.en.md) · [Русский](README.ru.md)
+[Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 
 **Windows x64 · переносимый ZIP · .NET уже включён**
 
 - [Релизы и SHA-256](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7)
-- [Руководство](MANUAL.ru.md) · [Обратная связь](https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose)
+- [Руководство](docs/MANUAL.ru.md) · [Обратная связь](https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose)
 
 Предварительная Windows-программа для односторонней синхронизации: просмотр плана,
 предыдущие версии, автоматические задачи и трей. Немецкий язык основной;
@@ -35,9 +35,9 @@
 
 Распакуйте переносной ZIP и запустите `KaktusBackupSync.exe`. Нужная среда .NET
 уже внутри; Python, SDK и установка не нужны. Настройки — в папке `runtime`
-рядом с EXE. [Краткая инструкция по переносу](START-HERE.txt).
+рядом с EXE. [Краткая инструкция по переносу](docs/START-HERE.txt).
 
-![Главное окно на русском. Папки и файлы на снимке вымышлены.](images/manual/ru-main.png)
+![Главное окно на русском. Папки и файлы на снимке вымышлены.](docs/images/manual/ru-main.png)
 
 Сверьте SHA-256 скачанного ZIP со значением на странице релиза. Распакуйте
 архив целиком: отдельная установка программе не нужна.
@@ -52,11 +52,11 @@
 завершение — через меню трея. Перед обновлением сохраняется прежняя версия назначения,
 по умолчанию семь версий. Рабочие файлы автоматически не удаляются.
 
-[Руководство](MANUAL.ru.md): установка, перенос, восстановление, устройство кода и
-проверки. [Сверка требований](REQUIREMENTS_STATUS.ru.md) отмечает оставшуюся работу.
+[Руководство](docs/MANUAL.ru.md): установка, перенос, восстановление, устройство кода и
+проверки.
 Тесты не заменяют испытания на чистом компьютере и при аппаратных сбоях.
 
-Исходники для просмотра; [все права сохранены](../LICENSE).
+Исходники для просмотра; [все права сохранены](LICENSE).
 
 ## Конфиденциальность
 
@@ -69,5 +69,5 @@
 
 Исходники открыты для просмотра, но это не open source. Частные лица могут
 скачивать и запускать неизменённую программу из релиза для личного использования.
-Подробнее: [права и условия](../RIGHTS.md), [сторонние компоненты](../THIRD_PARTY_NOTICES.md),
-[текст лицензии](../LICENSE). Отзывы можно писать на русском, немецком или английском.
+Подробнее: [права и условия](RIGHTS.md), [сторонние компоненты](THIRD_PARTY_NOTICES.md),
+[текст лицензии](LICENSE). Отзывы можно писать на русском, немецком или английском.

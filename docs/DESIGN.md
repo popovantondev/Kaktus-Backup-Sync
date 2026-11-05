@@ -3,7 +3,7 @@
 The mascot greets the user at startup and in an empty task. File information and
 actions remain the focus once a preview is open.
 
-Every product surface uses the same approved mascot image in
+Every product surface uses the same mascot image in
 `src/AntonsBackupManager.App/Assets/KaktusMascot.png`. The startup screen, empty
 task state, application icon, Explorer icon, tray, and portfolio demo must not
 draw or substitute another cactus. The source PNG retains its original pixels
@@ -30,7 +30,7 @@ starts the final pause if rendering is delayed; the main window does not depend
 on a rendered animation completion event. With animations disabled, only the
 one-second still frame is shown.
 
-The optional leaf-rustling recording accompanies startup. The owner confirmed
+The optional leaf-rustling recording accompanies startup. The author confirmed
 permission to redistribute `Assets/StartupLeaves.mp3`; public packages include it.
 Where present, it plays at 30% volume.
 The 3.12-second clip can finish naturally during the final still pause. Skipping
@@ -44,7 +44,7 @@ wrapping is measured. Tray labels and tooltips update immediately with the selec
 language; notification messages resolve their translation when displayed.
 
 The Explorer icon, title-bar icon, SVG wrapper, and tray all derive from the
-approved mascot image. The tray adds a small rotating arrow badge while syncing
+mascot image. The tray adds a small rotating arrow badge while syncing
 and a ready, paused, or attention badge in other states. Run
 `tools/New-Icon.ps1` with Windows PowerShell in STA mode to regenerate all icon
 sizes directly from that image.
@@ -56,7 +56,7 @@ The set includes intermediate sizes for scaled displays, following the
 Run tools/Test-ExplorerIcons.ps1 in STA mode after publishing to check Windows
 shell extraction against every native frame and create a visual comparison sheet.
 
-- Synchronizing: the approved mascot and twelve rotating-arrow frames.
+- Synchronizing: the mascot and twelve rotating-arrow frames.
 - Ready: green check badge.
 - Paused: gray background and pause bars.
 - Attention: amber background and exclamation badge.

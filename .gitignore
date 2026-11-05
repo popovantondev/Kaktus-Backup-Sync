@@ -18,3 +18,10 @@ artifacts/
 
 # Reversible holding area for local releases, never public source.
 Корзина_на_проверку/
+
+# Working files of the build tools never belong to the public source.
+.autopilot/
+CLAUDE.md
+CONTEXT.md
+docs/adr/
+docs/architecture.md

@@ -2,11 +2,11 @@
 
 ## 5.2.0-preview.7 — 2026-09-28
 
-- Use the approved mascot image consistently in the startup screen, app, Explorer and tray icons, and portfolio demo; remove the alternate cactus artwork.
+- Use the mascot image consistently in the startup screen, app, Explorer and tray icons, and portfolio demo; remove the alternate cactus artwork.
 - Keep the exact mascot pixels in public source while removing private PNG provenance metadata.
 - Add language-matched German, English and Russian screenshots to each manual and README.
 - Add the background completion notification policy and its focused checks.
-- Include the owner-approved startup recording in public source and portable packages.
+- Include the startup recording in public source and portable packages.
 - Include matching documentation images and validate their presence in portable ZIPs.
 - Add private-use rights terms, third-party notices, release checksum validation and localized issue forms.
 
@@ -58,7 +58,7 @@
 ## 5.2.0-preview.1 — 2026-09-08
 
 - Rename the application to Kaktus Backup & Sync, with a forest-green theme.
-- Add the approved cactus mascot, a skippable growth intro and an animated sync indicator.
+- Add the cactus mascot, a skippable growth intro and an animated sync indicator.
 - Keep tray launches silent; render rotating-arrow tray states at multiple sizes.
 - Accept Cloud Files metadata while continuing to reject links and junctions.
 - Open folder selection in the current path; add explicit Explorer actions.

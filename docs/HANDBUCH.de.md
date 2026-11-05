@@ -201,7 +201,7 @@ neue Dateien oder Konflikte.
 
 ![Startbildschirm mit dem freigegebenen Kaktus-Maskottchen.](images/manual/startup.png)
 
-Die vom Eigentümer zur Weitergabe freigegebene Aufnahme ist im Quelltextpaket
+Die zur Weitergabe freigegebene Aufnahme ist im Quelltextpaket
 und im portablen ZIP enthalten. Sie ist zur Laufzeit optional. Siehe
 `ASSET-NOTICES.md` und die [Anleitung zum Quelltextpaket](SOURCE-PACKAGE.md).
 

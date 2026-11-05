@@ -163,9 +163,9 @@ remain new files or conflicts.
 
 ## Demonstration
 
-![Startup screen with the approved Kaktus mascot.](images/manual/startup.png)
+![Startup screen with the Kaktus mascot.](images/manual/startup.png)
 
-The owner-approved leaf-rustling recording is included in the source snapshot and
+The leaf-rustling recording is included in the source snapshot and
 portable package. It is optional at runtime. See `ASSET-NOTICES.md` and the
 [source package guide](SOURCE-PACKAGE.md).
 

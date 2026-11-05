@@ -6,27 +6,39 @@
     "en": "docs/images/manual/en-main.png"
   },
   "icon": "presentation-icon.png",
+  "stack": "C# · .NET · WPF",
   "palette": {
-    "accent": "#38723c",
-    "tint": "#edf4e7",
-    "hero": "#193b28",
-    "hero-end": "#3d6c4a"
+    "light": {"accent": "#38723c", "tint": "#edf4e7", "hero": "#193b28", "hero-end": "#3d6c4a"},
+    "dark": {"accent": "#86cf8b", "tint": "#182e1c", "hero": "#0f2a1b", "hero-end": "#2b5a38"}
   },
-  "flow": {
-    "ru": [
-      "Выбрать источник",
-      "Проверить предпросмотр",
-      "Создать одностороннюю копию"
+  "flow": {"ru":["Выбрать источник","Проверить предпросмотр","Создать одностороннюю копию"],"de":["Quelle auswählen","Vorschau prüfen","Einseitige Sicherung erstellen"],"en":["Select a source","Review the preview","Create a one-way backup"]},
+  "bento": {
+    "terminal": [
+      ["ps", "PS> Get-FileHash .\\{zip} -Algorithm SHA256"],
+      ["ps", "PS> Get-Content .\\{sha}"],
+      ["dim", {"de": "Beide Werte müssen übereinstimmen.", "en": "Both values must match.", "ru": "Оба значения должны совпадать."}],
+      ["ps", "PS> Expand-Archive .\\{zip} -DestinationPath .\\Kaktus"],
+      ["ps", "PS> .\\Kaktus\\{base}\\KaktusBackupSync.exe"]
     ],
-    "de": [
-      "Quelle auswählen",
-      "Vorschau prüfen",
-      "Einseitige Sicherung erstellen"
-    ],
-    "en": [
-      "Select a source",
-      "Review the preview",
-      "Create a one-way backup"
-    ]
+    "features": {
+      "de": ["Vorschau vor dem Kopieren", "Frühere Versionen (Standard: 7)", "Automatische Aufgaben", "Pause einzeln oder global", "Infobereich (Tray)", "OneDrive-Metadaten", "Wechseldatenträger", "DE · EN · RU"],
+      "en": ["Preview before copying", "Previous versions (default: 7)", "Automatic tasks", "Pause one or all tasks", "System tray", "OneDrive metadata", "Removable drives", "DE · EN · RU"],
+      "ru": ["Просмотр плана перед копированием", "Предыдущие версии (по умолчанию 7)", "Автоматические задачи", "Пауза: отдельная и общая", "Значок в трее", "Метаданные OneDrive", "Съёмные накопители", "RU · DE · EN"]
+    },
+    "third": {
+      "live": true,
+      "title": {"de": "Läuft lokal", "en": "Runs locally", "ru": "Работает локально"},
+      "text": {
+        "de": "Verarbeitet die gewählten Ordner lokal und lädt keine Dateien hoch. Aufgaben und Verlauf liegen im Ordner runtime neben der EXE.",
+        "en": "Processes the selected folders locally and uploads no files. Tasks and history are stored in the runtime folder beside the EXE.",
+        "ru": "Обрабатывает выбранные папки локально и ничего не загружает. Задачи и история лежат в папке runtime рядом с EXE."
+      },
+      "label": {"de": "Lokal · offline", "en": "Local · offline", "ru": "Локально · офлайн"}
+    },
+    "checks": {
+      "de": ["Tests und UI-Prüfung auf Windows per GitHub Actions", "Prüfung der Dokumentation und Links im CI", "SHA-256-Prüfsumme für das Portable-ZIP", "Versionsnummer und Änderungsprotokoll", "Oberfläche und Anleitung in Deutsch, Russisch und Englisch"],
+      "en": ["Tests and UI checks on Windows with GitHub Actions", "Documentation and link checks in CI", "SHA-256 checksum for the portable ZIP", "Version number and changelog", "Interface and guide in German, Russian and English"],
+      "ru": ["Тесты и проверка интерфейса на Windows через GitHub Actions", "Проверка документации и ссылок в CI", "Контрольная сумма SHA-256 для переносного ZIP", "Номер версии и журнал изменений", "Интерфейс и руководство на немецком, русском и английском"]
+    }
   }
 }

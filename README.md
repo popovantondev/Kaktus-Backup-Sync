@@ -18,7 +18,7 @@ Einseitige Ordnersicherung mit Vorschau und Aufbewahrung früherer Dateiversione
 **Prüfsummen:** [`Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256) · [`Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256)
 <!-- public-release:end -->
 
-[Deutsch](README.md) · [English](docs/README.en.md) · [Русский](docs/README.ru.md)
+[Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 
 **Windows x64 · Portable ZIP · .NET-Laufzeit enthalten**
 
@@ -35,8 +35,8 @@ Aufgaben, Sprache und Verlauf liegen im Unterordner `runtime`.
 
 ![Hauptfenster auf Deutsch. Die dargestellten Ordner und Dateien sind fiktiv.](docs/images/manual/de-main.png)
 
-Prüfe nach dem Download die SHA-256-Prüfsumme, die beim Release angegeben ist.
-Entpacke das vollständige ZIP-Archiv; die
+Prüfen Sie nach dem Download die SHA-256-Prüfsumme, die beim Release angegeben ist.
+Entpacken Sie das vollständige ZIP-Archiv; die
 Anwendung benötigt keine separate Installation.
 
 1. Eine Aufgabe benennen und vorhandene Quelle und Ziel wählen.
@@ -56,8 +56,8 @@ Wechseldatenträger werden unterstützt.
 ## Benutzerhandbücher
 
 - [Deutsches Benutzerhandbuch](docs/HANDBUCH.de.md)
-- [English quick guide](docs/README.en.md)
-- [Русское краткое руководство](docs/README.ru.md)
+- [English quick guide](README.en.md)
+- [Русское краткое руководство](README.ru.md)
 - [Portable-Kurzanleitung](docs/START-HERE.txt)
 - [Changelog](CHANGELOG.md)
 
@@ -65,16 +65,13 @@ Wechseldatenträger werden unterstützt.
 
 - [Architektur in drei Sprachen](docs/ARCHITECTURE.md)
 - [Hinweise zum Quelltextpaket](docs/SOURCE-PACKAGE.md)
-- [Historischer lokaler Release-Audit](docs/RELEASE_AUDIT.md)
-- [Сверка требований](docs/REQUIREMENTS_STATUS.ru.md)
-- [Карта проекта и опубликованных локальных выпусков](docs/PROJECT_MAP.ru.md)
 
 ## Datenschutz
 
 Die Anwendung verarbeitet die ausgewählten Ordner lokal und lädt keine Dateien
 hoch. Aufgaben und Verlauf werden im lokalen `runtime`-Ordner gespeichert.
 Screenshots und Fehlerberichte können persönliche Pfade oder Dateinamen zeigen;
-entferne diese Angaben vor dem Teilen.
+entfernen Sie diese Angaben vor dem Teilen.
 
 ## Rechte
 

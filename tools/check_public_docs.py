@@ -27,13 +27,12 @@ def markdown(d,l):
     return START+'\n'+'\n'.join(out)+'\n'+END
 def html_summary(d,l):
     t=LABELS[l];e=escape
-    out=[f'<section class="topic release-summary" aria-label="{e(t["start"])}">',f'<p>{e(d["description"][l])}</p>',f'<p><strong>{e(d["platform"])} · {e(status(d,l))}</strong></p>','<p class="release-actions">'+' '.join(f'<a class="release-link" href="{e(url)}">{e(label)}</a>' for label,url in actions(d,l) if url!=d['help_url'].format(lang=l))+'</p>',f'<p><strong>{e(t["setup"])}:</strong> {e(d["requirements"][l])}</p>',f'<p><strong>{e(t["start"])}:</strong> {e(d["start"][l])}</p>']
+    out=[f'<section class="topic release-summary" aria-label="{e(t["start"])}">',f'<p><strong>{e(d["platform"])} · {e(status(d,l))}</strong></p>','<p class="release-actions">'+' '.join(f'<a class="release-link" href="{e(url)}">{e(label)}</a>' for label,url in actions(d,l) if url!=d['help_url'].format(lang=l))+'</p>',f'<p><strong>{e(t["setup"])}:</strong> {e(d["requirements"][l])}</p>',f'<p><strong>{e(t["start"])}:</strong> {e(d["start"][l])}</p>']
     if d['downloads']:
         assets={a['name']:a for a in d['assets']}
         out += [f'<h2>{e(t["files"])}</h2>','<ul>']+[f'<li><a href="{e(assets[name]["url"])}"><code>{e(name)}</code></a></li>' for name in d['downloads']]+['</ul>',f'<p><strong>{e(t["checksum"])}:</strong> '+' · '.join(f'<a href="{e(assets[n]["url"])}">{e(n)}</a>' for n in d['checksums'])+'</p>']
     out+=['</section>']
     return START+'\n'+'\n'.join(out)+'\n'+END
-CSS='.release-summary code{overflow-wrap:anywhere}.release-actions{display:flex;gap:8px;flex-wrap:wrap}.release-link{display:inline-block;padding:9px 13px;border:1px solid #bdd1ed;border-radius:10px;background:#edf4ff;color:#0753ad;font-weight:650;text-decoration:none}.release-link:focus-visible{outline:3px solid #1677ff;outline-offset:3px}'
 def replace_block(text,block):
     if START in text:
         return re.sub(re.escape(START)+'.*?'+re.escape(END),lambda _:block,text,flags=re.S)
@@ -61,7 +60,6 @@ def generated_app(d):
             hero=re.search(r'<section\b[^>]*class="hero(?: [^"]*)?"[^>]*>.*?</section>',text,re.S)
             if not hero: raise ValueError('Missing guide hero: '+name)
             new=text[:hero.end()]+'\n'+html_summary(d,l)+'\n'+text[hero.end():]
-        if CSS not in new: new=new.replace('</style>',CSS+'\n</style>',1)
         generated[name]=new
     return generated
 CATALOG_CSS='''*{box-sizing:border-box}body{margin:0;background:#f3f6fb;color:#14253d;font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:#0753ad;text-underline-offset:3px}a:focus-visible,button:focus-visible{outline:3px solid #1677ff;outline-offset:3px}.shell{max-width:1100px;margin:auto;padding:24px 20px 48px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}nav{display:flex;gap:8px}nav a{padding:5px 10px;border:1px solid #dbe4f0;border-radius:20px;text-decoration:none;background:white}nav a[aria-current]{background:#e5efff;font-weight:700}.hero{margin:22px 0;padding:32px;border-radius:24px;color:white;background:linear-gradient(115deg,#07172e,#245faa)}h1{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:0 0 14px}h2{font-size:22px;line-height:1.3;margin:0 0 10px}.hero p{max-width:760px;margin:0}.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.project{background:white;border:1px solid #dbe4f0;border-radius:18px;padding:24px;display:flex;flex-direction:column}.project p{margin:8px 0}.project .description{flex:1}.platform{font-size:14px;color:#526176}.status{display:inline-block;align-self:flex-start;border-radius:8px;padding:3px 8px;background:#e7f3eb;color:#25633b;font-size:13px;font-weight:650}.preview{background:#fff1d7;color:#7d5315}.source{background:#eef0f4;color:#4d5663}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.actions a{padding:8px 12px;background:#edf4ff;border-radius:9px;text-decoration:none;font-weight:650;font-size:14px}.actions a:first-child{background:#0753ad;color:white}.requirements{font-size:14px;color:#526176}footer{margin:25px 0 0;color:#526176;font-size:14px}@media(max-width:650px){.projects{grid-template-columns:1fr}.hero{padding:24px}.project{padding:20px}}'''

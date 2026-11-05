@@ -15,7 +15,7 @@ published dependencies change.
 The optional startup recording is not included in the public source snapshot.
 Its redistribution permission has not been documented; do not add it to a
 public package until the rights are confirmed. The public source uses the
-owner-approved mascot image with private generation metadata removed. See [asset notices](ASSET-NOTICES.md).
+project mascot image with private generation metadata removed. See [asset notices](ASSET-NOTICES.md).
 
 The Windows CI workflow uses GitHub Actions `checkout` and `setup-dotnet`.
 Their licenses apply to those services/actions; they are not bundled in the app.
@@ -36,7 +36,7 @@ erneut prüfen.
 Die optionale Startaufnahme ist nicht im öffentlichen Quelltextexport enthalten.
 Ihre Weitergaberechte sind nicht dokumentiert; vor einer Aufnahme in ein
 öffentliches Paket müssen sie geklärt werden. Der öffentliche Quelltext verwendet
-das vom Eigentümer freigegebene Maskottchenbild ohne private Generierungsmetadaten. Siehe [Asset-Hinweise](ASSET-NOTICES.md).
+das Maskottchenbild des Projekts ohne private Generierungsmetadaten. Siehe [Asset-Hinweise](ASSET-NOTICES.md).
 
 Die Windows-CI verwendet `checkout` und `setup-dotnet` von GitHub Actions. Deren
 Bedingungen gelten für diese Dienste und Actions; sie sind nicht Teil der App.
@@ -54,8 +54,7 @@ x64 входят компоненты среды Microsoft .NET и Windows Deskt
 
 Дополнительная запись для запуска не включена в публичный экспорт исходников.
 Право на её распространение не подтверждено; не добавляйте её в публичный пакет,
-пока не выяснены условия. Публичный исходник использует утверждённый владельцем
-маскот без приватных метаданных генерации. См. [уведомления об изображениях](ASSET-NOTICES.md).
+пока не выяснены условия. Публичный исходник использует маскот проекта без приватных метаданных генерации. См. [уведомления об изображениях](ASSET-NOTICES.md).
 
 Windows CI использует `checkout` и `setup-dotnet` в GitHub Actions. Их условия
 относятся к этим сервисам и actions; сами они в программу не входят.

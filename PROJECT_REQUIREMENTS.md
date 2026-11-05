@@ -35,5 +35,4 @@ Tests müssen Störungen und synthetische Abläufe abdecken. Vor Veröffentlichu
 Datenschutz, Lizenz, Git-Metadaten und sauberes Windows prüfen. Der aktuelle Stand
 ist eine Vorabversion, keine Behauptung über den Abschluss aller Anforderungen.
 
-Siehe [Handbuch](docs/HANDBUCH.de.md), [Audit](docs/RELEASE_AUDIT.md) und
-[Anforderungstabelle](docs/REQUIREMENTS_STATUS.ru.md).
+Siehe [Handbuch](docs/HANDBUCH.de.md).
