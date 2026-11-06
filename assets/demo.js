@@ -53,6 +53,8 @@
     return f;
   }
 
+  /* the plant (assets/cactus-demo.js) lives in the skeleton; keep it and put it back to the right of the demo */
+  var plant = body.querySelector('[data-cactus-demo]');
   body.textContent = '';
   var side = el('div', 'ppk-demo-side');
   var main = el('div', 'ppk-demo-main');
@@ -86,6 +88,7 @@
   main.appendChild(msg);
   body.appendChild(side);
   body.appendChild(main);
+  if (plant) body.appendChild(plant);
 
   var timers = [];
   function later(fn, ms) {

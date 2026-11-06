@@ -1,4 +1,4 @@
-/* Live startup window of the guide (assets/cactus-demo.js). The window is drawn at 600 x 340 like StartupWindow.xaml
+/* Live startup scenes: landing hero, landing demo, guide hero (assets/cactus-demo.js). The window is drawn at 600 x 340 like StartupWindow.xaml
  * and scales with its container down to 400 px and below. */
 .cactus-demo{container-type:inline-size;max-width:600px;margin:20px auto}
 .cactus-window{--u:1px;position:relative;display:grid;grid-template-columns:minmax(0,1fr) 50%;align-items:center;aspect-ratio:600/340;overflow:hidden;border:1px solid #DBE4F0;border-radius:calc(var(--u)*24);background:#F3F6FB;box-shadow:0 18px 40px -22px rgba(20,37,61,.45);cursor:pointer;color:#14253D;font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
@@ -14,7 +14,7 @@
 .cactus-art:focus-visible{outline:3px solid var(--ppk-focus,#075DD1)}
 .cactus-svg{display:block;width:100%;height:100%;transition:transform .18s ease-out;will-change:transform}
 .cactus-art.is-lifted .cactus-svg{transform:translateY(-2.2%)}
-.cactus-lid{fill:url(#cactus-skin);transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0)}
+.cactus-lid{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0)}
 .cactus-lash{fill:none;stroke:#16240f;stroke-width:1.5;stroke-linecap:round;opacity:0}
 .cactus-art.is-blink .cactus-lid{animation:cactus-lid .22s ease-in-out}
 .cactus-art.is-blink .cactus-lash{animation:cactus-lash .22s ease-in-out}
@@ -25,6 +25,18 @@
 .cactus-controls button:hover{border-color:var(--ppk-accent)}
 .cactus-controls button:focus-visible{outline:3px solid var(--ppk-focus,#075DD1);outline-offset:2px}
 .cactus-note{margin:12px 0 0!important;color:var(--ppk-muted);font-size:14px;text-align:center}
+/* hero scenes: the window sits in the right column of the hero (landing) or beside the lead (guide) */
+.cactus-scene{min-width:0}
+.cactus-scene .cactus-static{margin:0}
+.cactus-scene .cactus-static img{display:block;max-width:100%;height:auto;border-radius:16px}
+.cactus-scene .cactus-demo{margin:0 auto}
+.guide-hero-live{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,480px);gap:8px 32px;align-items:center}
+.guide-hero-live>*{min-width:0}
+.guide-hero-live .cactus-scene{grid-column:2;grid-row:1/span 4}
+@media(max-width:860px){.guide-hero-live{grid-template-columns:1fr}.guide-hero-live .cactus-scene{grid-column:1;grid-row:auto}}
+/* mini scene inside the browser demo: only the plant, no window */
+.cactus-mini{margin:0;max-width:none}
+.cactus-mini .cactus-art{width:min(100%,240px);margin:0 auto}
 @media(prefers-reduced-motion:reduce){
   .cactus-svg{transition:none}
   .cactus-art.is-lifted .cactus-svg{transform:none}

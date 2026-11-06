@@ -5,8 +5,9 @@
 <link rel="icon" href="presentation-icon.png">
 <script src="assets/kit/kit-theme.js"></script>
 <link rel="stylesheet" href="assets/kit/kit.css?v=2026.11.06-1">
-<link rel="stylesheet" href="presentation.css?v=02e4523a">
+<link rel="stylesheet" href="presentation.css?v=26b20818">
 <link rel="stylesheet" href="guide-polish.css?v=62598140">
+<link rel="stylesheet" href="assets/cactus-demo.css?v=18d95028">
 <script src="assets/kit/programs.js?v=2026.11.06-1" defer></script>
 <script src="assets/kit/kit.js?v=2026.11.06-1" defer></script>
 <!-- ppk-head:end -->
@@ -19,7 +20,20 @@
 </div>
 <!-- ppk-header:end -->
 <main class="ppk-shell ppk-prose guide" id="main">
-<!-- guide-hero:start --><section class="guide-hero"><p class="guide-kicker">Anleitung</p><h1>Kaktus Backup &amp; Sync</h1><p class="guide-lead">Erstellen Sie übersichtliche Sicherungsaufgaben und synchronisieren Sie ausgewählte Ordner mit prüfbaren, wiederherstellbaren Aktionen.</p></section><!-- guide-hero:end -->
+<!-- guide-hero:start --><section class="guide-hero guide-hero-live"><p class="guide-kicker">Anleitung</p><h1>Kaktus Backup &amp; Sync</h1><p class="guide-lead">Erstellen Sie übersichtliche Sicherungsaufgaben und synchronisieren Sie ausgewählte Ordner mit prüfbaren, wiederherstellbaren Aktionen.</p><!-- cactus-demo:start -->
+<div class="cactus-scene">
+<p class="cactus-static"><a class="guide-full-image" href="docs/images/manual/startup.png" aria-label="Vollständiges Bild öffnen"><img src="docs/images/manual/startup.png" alt="Startbildschirm mit dem freigegebenen Kaktus-Maskottchen." width="600" height="340"></a></p>
+<div class="cactus-demo" data-cactus-demo data-start="load" data-image="assets/cactus/mascot.webp" hidden>
+<div class="cactus-window" role="group" aria-label="Startfenster von Kaktus Backup &amp; Sync — lebendige Demonstration">
+<div class="cactus-copy"><div class="cactus-title">Kaktus</div><div class="cactus-sub">Backup &amp; Sync</div><div class="cactus-bar"></div><div class="cactus-ver">5.2 · Preview</div></div>
+<div class="cactus-art" tabindex="0" role="img" aria-label="Ein kleiner Kaktus wächst im Topf. Klick oder Taste überspringt das Wachstum."></div>
+</div>
+<p class="cactus-controls"><button type="button" class="cactus-replay">Erneut wachsen lassen</button></p>
+<p class="cactus-note">Lebendige Demonstration des Startfensters: Ein Klick oder eine Taste überspringt das Wachstum.</p>
+</div>
+</div>
+<script src="assets/cactus-demo.js?v=85d79ba1" defer></script>
+<!-- cactus-demo:end --></section><!-- guide-hero:end -->
 <!-- public-release:start -->
 <section class="topic release-summary" aria-label="Erste Schritte">
 <p><strong>Windows · x64 · Vorabversion 5.2.0-preview.7</strong></p>
@@ -199,19 +213,6 @@ Die Schreibweise übergeordneter Ordner bleibt erhalten. Eine erneute Namensänd
 nach der Vorschau verlangt einen neuen Plan. Dateien ohne sichere Zuordnung bleiben
 neue Dateien oder Konflikte.</p>
 </section><section class="topic"><h2 id="kurze-demonstration">Kurze Demonstration</h2>
-<!-- cactus-demo:start -->
-<link rel="stylesheet" href="assets/cactus-demo.css?v=e1081235">
-<div class="cactus-demo" data-cactus-demo data-image="assets/cactus/mascot.webp" data-sound="assets/cactus/StartupLeaves.mp3" hidden>
-<div class="cactus-window" role="group" aria-label="Startfenster von Kaktus Backup &amp; Sync — lebendige Demonstration">
-<div class="cactus-copy"><div class="cactus-title">Kaktus</div><div class="cactus-sub">Backup &amp; Sync</div><div class="cactus-bar"></div><div class="cactus-ver">5.2 · Preview</div></div>
-<div class="cactus-art" tabindex="0" role="img" aria-label="Ein kleiner Kaktus wächst im Topf. Klick oder Taste überspringt das Wachstum."></div>
-</div>
-<p class="cactus-controls"><button type="button" class="cactus-replay">Erneut wachsen lassen</button> <button type="button" class="cactus-mute" aria-pressed="false" data-on="Ton: an" data-off="Ton: aus">Ton: an</button></p>
-<p class="cactus-note">Lebendige Demonstration des Startfensters: Ein Klick oder eine Taste überspringt das Wachstum. Ton gibt es erst nach Ihrem ersten Klick oder Tastendruck auf dieser Seite. Die Aufnahme des Blätterrauschens stammt aus dem Quelltext des Programms; Rechte: <code>ASSET-NOTICES.md</code>.</p>
-</div>
-<script src="assets/cactus-demo.js?v=6f785568" defer></script>
-<!-- cactus-demo:end -->
-<p class="cactus-static"><a class="guide-full-image" href="docs/images/manual/startup.png" aria-label="Vollständiges Bild öffnen"><img src="docs/images/manual/startup.png" alt="Startbildschirm mit dem freigegebenen Kaktus-Maskottchen." /></a></p>
 <p>Die zur Weitergabe freigegebene Aufnahme ist im Quelltextpaket
 und im portablen ZIP enthalten. Sie ist zur Laufzeit optional. Siehe
 <code>ASSET-NOTICES.md</code> und die <a href="https://github.com/popovantondev/Kaktus-Backup-Sync/blob/main/docs/SOURCE-PACKAGE.md">Anleitung zum Quelltextpaket</a>.</p>

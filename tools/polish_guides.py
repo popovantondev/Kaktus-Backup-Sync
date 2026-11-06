@@ -94,6 +94,7 @@ def main():
     version = bp.kit_version()
     (site / 'guide-polish.css').write_bytes(CSS.encode('utf-8'))
     guide_css = '<link rel="stylesheet" href="guide-polish.css?v=%s">' % bp.file_hash(CSS)
+    guide_css += '\n' + bp.cactus_head()
     pages = {l: 'Guide-%s.html' % l for l in bp.LANGS}
     for path in sorted(site.glob('Guide-*.html')):
         lang = path.stem[-2:]
@@ -102,6 +103,7 @@ def main():
         s = path.read_bytes().decode('utf-8').replace('\r\n', '\n')
         s = block(s, 'ppk-head', '\n' + bp.head_block(cfg, d, version, guide_css) + '\n')
         s = block(s, 'ppk-header', '\n<a class="ppk-skip" href="#main">%s</a>\n%s\n' % (bp.TEXT[lang]['skip'], bp.header_block(cfg, d, lang, pages)))
+        s = block(s, 'cactus-demo', '\n' + bp.cactus_scene(d, lang, 'guide') + '\n' + bp.cactus_script() + '\n')
         s = block(s, 'ppk-footer', '\n' + bp.footer_block(d, lang) + '\n')
         # Release summary: no self links, plain headings.
         start, end = s.find('<!-- public-release:start -->'), s.find('<!-- public-release:end -->')

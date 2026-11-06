@@ -9,5 +9,11 @@
 .site-notice{margin:14px 0 0;padding:12px 14px;border-radius:12px;background:var(--ppk-tint);font-size:15px}
 .site-third-note{margin:10px 0 0;font-size:14px;color:var(--ppk-muted)}
 .ppk-rows small{margin-left:4px;color:var(--ppk-muted)}
+.site-shot-section{margin-top:28px}
+.site-shot-section .ppk-preview{max-width:980px;margin-inline:auto}
+.ppk-demo-body{grid-template-columns:220px minmax(0,1fr) 240px;align-items:stretch}
+.ppk-demo-body>.cactus-mini{align-self:center;padding:12px 16px 12px 0}
+@media(max-width:900px){.ppk-demo-body{grid-template-columns:220px minmax(0,1fr)}.ppk-demo-body>.cactus-mini{grid-column:1/-1;padding:0 16px 12px}}
+@media(max-width:560px){.ppk-demo-body{grid-template-columns:1fr}}
 .ppk-demo-empty:focus-visible{outline:2px solid var(--ppk-focus);outline-offset:2px}
 @media(max-width:760px){.site-start{grid-template-columns:1fr;padding:22px}}
