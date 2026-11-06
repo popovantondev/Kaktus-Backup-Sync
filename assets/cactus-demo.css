@@ -20,16 +20,21 @@
 .cactus-art.is-blink .cactus-lash{animation:cactus-lash .22s ease-in-out}
 @keyframes cactus-lid{0%{transform:scaleY(0)}40%,60%{transform:scaleY(1)}100%{transform:scaleY(0)}}
 @keyframes cactus-lash{0%,30%{opacity:0}42%,58%{opacity:1}70%,100%{opacity:0}}
-/* round "grow again" button, top left of the scene; light surface in both themes like the window itself */
+/* "grow again": two thick cream arrows like the badge on the pot, no disc and no frame; a dark green rim keeps them readable on the light window */
 .cactus-demo{position:relative}
-.cactus-replay{position:absolute;top:10px;left:10px;z-index:2;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid #B9C9DE;border-radius:50%;background:#fff;color:#075DD1;cursor:pointer;box-shadow:0 2px 6px rgba(20,37,61,.18)}
-.cactus-replay svg{display:block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s ease}
-.cactus-replay:hover,.cactus-replay:focus-visible{border-color:#075DD1}
+.cactus-replay{position:absolute;top:6px;left:6px;z-index:2;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:0;border-radius:8px;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.cactus-replay svg{display:block;overflow:visible;fill:none;transition:transform .35s ease;filter:drop-shadow(0 1px 1.5px rgba(10,40,25,.45))}
+.cactus-replay path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.cactus-replay path.cactus-arrow-rim{stroke:#1F4D36;stroke-width:4}
+.cactus-replay path.cactus-arrow{stroke:#FBF6E8;stroke-width:2.3}
+.cactus-replay path.cactus-head.cactus-arrow-rim{fill:#1F4D36;stroke-width:2}
+.cactus-replay path.cactus-head.cactus-arrow{fill:#FBF6E8;stroke-width:1}
 .cactus-replay:hover svg,.cactus-replay:focus-visible svg{transform:rotate(180deg)}
-.cactus-replay:focus-visible{outline:3px solid #075DD1;outline-offset:2px}
+.cactus-replay:focus-visible{outline:3px solid #075DD1;outline-offset:0}
 :root[data-theme="dark"] .cactus-replay:focus-visible{outline-color:#9BC5FF}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .cactus-replay:focus-visible{outline-color:#9BC5FF}}
-@container (max-width:420px){.cactus-replay{top:6px;left:6px;width:36px;height:36px}.cactus-replay svg{width:18px;height:18px}}
+@container (max-width:420px){.cactus-replay{top:2px;left:2px}.cactus-replay svg{width:26px;height:26px}}
+@media(prefers-reduced-motion:reduce){.cactus-replay svg{transition:none}.cactus-replay:hover svg,.cactus-replay:focus-visible svg{transform:none}}
 .cactus-note{margin:12px 0 0!important;color:var(--ppk-muted);font-size:14px;text-align:center}
 /* hero scenes: the window sits in the right column of the hero (landing) or beside the lead (guide) */
 .cactus-scene{min-width:0}

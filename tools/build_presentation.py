@@ -79,14 +79,20 @@ CACTUS_IMAGE = 'assets/cactus/mascot.webp'
 CACTUS_STATIC = 'docs/images/manual/startup.png'
 
 
-def cactus_replay(lang):
-    """Round icon button with two circular arrows, top left of the scene; label and tooltip in the page language."""
-    label = CACTUS[lang]['replay']
-    return ('<button type="button" class="cactus-replay" aria-label="%s" title="%s">'
-            '<svg viewBox="0 0 24 24" width="22" height="22" focusable="false" aria-hidden="true">'
-            '<path d="M21 3v5h-5"/><path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"/>'
-            '<path d="M3 21v-5h5"/><path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"/></svg></button>') % (label, label)
+REPLAY_ARROWS = ('M5.03 11.39A7 7 0 0 1 17.36 7.5M18.97 12.61A7 7 0 0 1 6.64 16.5',
+                 'M20.12 5.19L19.55 10.11L14.6 9.81ZM3.88 18.81L4.45 13.89L9.4 14.19Z')
 
+
+def cactus_replay(lang):
+    """Two thick round arrows on a bare button (no disc, no frame) like the badge on the Kaktus pot: cream arrows
+    with a dark green rim so they read on the light window; label and tooltip in the page language."""
+    label = CACTUS[lang]['replay']
+    arcs, heads = REPLAY_ARROWS
+    shape = '<path class="%s" d="' + arcs + '"/><path class="%s cactus-head" d="' + heads + '"/>'
+    return ('<button type="button" class="cactus-replay" aria-label="%s" title="%s">'
+            '<svg viewBox="0 0 24 24" width="30" height="30" focusable="false" aria-hidden="true">'
+            + shape % ('cactus-arrow-rim', 'cactus-arrow-rim') + shape % ('cactus-arrow', 'cactus-arrow')
+            + '</svg></button>') % (label, label)
 
 def cactus_scene(d, lang, kind):
     """Live startup window. kind: hero (landing, grows at once), guide (guide hero, with note). Both carry the round replay button."""
