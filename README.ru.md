@@ -1,5 +1,7 @@
 # Kaktus Backup & Sync 5.2
 
+[Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
+
 <!-- public-release:start -->
 Выполняет одностороннее резервное копирование папок с предварительным просмотром и сохранением предыдущих версий.
 
@@ -21,8 +23,6 @@
 В preview.7 маскот используется во всех значках и окнах; добавлены
 скриншоты руководств на нужном языке и проверки фоновых уведомлений.
 [Архитектура](docs/ARCHITECTURE.md) · [Исходники](docs/SOURCE-PACKAGE.md).
-
-[Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 
 **Windows x64 · переносимый ZIP · .NET уже включён**
 

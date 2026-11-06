@@ -1,5 +1,7 @@
 # Kaktus Backup & Sync 5.2
 
+[Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
+
 <!-- public-release:start -->
 One-way folder backup with a preview and preserved previous file versions.
 
@@ -21,8 +23,6 @@ One-way folder backup with a preview and preserved previous file versions.
 Preview.7 uses the mascot throughout the app and adds localized manual
 screenshots, tray notification checks and release packaging updates.
 [Architecture](docs/ARCHITECTURE.md) · [Source package](docs/SOURCE-PACKAGE.md).
-
-[Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 
 **Windows x64 · Portable ZIP · .NET runtime included**
 
