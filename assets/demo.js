@@ -10,17 +10,17 @@
 
   var lang = (document.documentElement.lang || 'de').slice(0, 2);
   var TEXT = {
-    de: { from: 'Quelle', fromValue: 'Dokumente (Beispiel)', to: 'Ziel', toValue: 'Backup-Laufwerk (E:)', preview: 'Vorschau berechnen', run: 'Sicherung starten',
+    de: { from: 'Quelle', fromValue: 'Dokumente (Beispiel)', to: 'Ziel', toValue: 'Backup-Laufwerk (E:)', pending: 'ausstehend', preview: 'Vorschau berechnen', run: 'Sicherung starten',
           hint: 'Klicken Sie auf „Vorschau berechnen“ — die App zeigt zuerst, was passieren wird.', ready: 'Vorschau fertig. Mit „Sicherung starten“ geht es weiter.',
           progress: 'Fortschritt der Sicherung', list: 'Vorschau der Dateien',
           states: { 'new': 'neu', changed: 'geändert', same: 'gleich' }, acts: { copy: 'kopieren', keep: 'alte Version behalten', skip: 'überspringen' },
           done: function (c, k, s) { return '✓ Fertig: ' + c + ' Dateien kopiert, ' + k + ' alte Versionen behalten, ' + s + ' übersprungen. (Demo — nichts wurde kopiert.)'; } },
-    en: { from: 'Source', fromValue: 'Documents (sample)', to: 'Target', toValue: 'Backup drive (E:)', preview: 'Calculate preview', run: 'Start backup',
+    en: { from: 'Source', fromValue: 'Documents (sample)', to: 'Target', toValue: 'Backup drive (E:)', pending: 'pending', preview: 'Calculate preview', run: 'Start backup',
           hint: 'Click “Calculate preview” — the app first shows what will happen.', ready: 'Preview ready. Continue with “Start backup”.',
           progress: 'Backup progress', list: 'File preview',
           states: { 'new': 'new', changed: 'changed', same: 'same' }, acts: { copy: 'copy', keep: 'keep old version', skip: 'skip' },
           done: function (c, k, s) { return '✓ Done: ' + c + ' files copied, ' + k + ' old versions kept, ' + s + ' skipped. (Demo — nothing was copied.)'; } },
-    ru: { from: 'Источник', fromValue: 'Документы (пример)', to: 'Назначение', toValue: 'Диск резервной копии (E:)', preview: 'Рассчитать предпросмотр', run: 'Начать копирование',
+    ru: { from: 'Источник', fromValue: 'Документы (пример)', to: 'Назначение', toValue: 'Диск резервной копии (E:)', pending: 'ожидает', preview: 'Рассчитать предпросмотр', run: 'Начать копирование',
           hint: 'Нажмите «Рассчитать предпросмотр» — программа сначала покажет, что произойдёт.', ready: 'Предпросмотр готов. Продолжите кнопкой «Начать копирование».',
           progress: 'Ход копирования', list: 'Предпросмотр файлов',
           states: { 'new': 'новый', changed: 'изменён', same: 'без изменений' }, acts: { copy: 'копировать', keep: 'сохранить старую версию', skip: 'пропустить' },
@@ -90,6 +90,10 @@
   body.appendChild(main);
   if (plant) body.appendChild(plant);
 
+  /* before the first preview the window already shows the sample files, waiting to be compared */
+  rows.classList.add('demo-pending');
+  FILES.forEach(function (f) { addRow(f, true); });
+
   var timers = [];
   function later(fn, ms) {
     var id = setTimeout(fn, reduced ? 0 : ms);
@@ -99,18 +103,19 @@
     while (timers.length) clearTimeout(timers.pop());
   }
 
-  function addRow(f) {
+  function addRow(f, pending) {
     var li = el('li');
     var name = el('span', null, f[0]);
-    name.appendChild(el('small', null, ' · ' + T.states[f[1]]));
+    if (!pending) name.appendChild(el('small', null, ' · ' + T.states[f[1]]));
     li.appendChild(name);
-    li.appendChild(el('span', 'ppk-badge' + BADGE[f[2]], T.acts[f[2]]));
+    li.appendChild(el('span', 'ppk-badge' + (pending ? '' : BADGE[f[2]]), pending ? T.pending : T.acts[f[2]]));
     rows.appendChild(li);
   }
 
   previewBtn.addEventListener('click', function () {
     cancelAll();
     rows.textContent = '';
+    rows.classList.remove('demo-pending');
     bar.hidden = true;
     fill.style.width = '0%';
     runBtn.disabled = true;
