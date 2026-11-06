@@ -108,8 +108,9 @@
     });
 
     /* skip: click anywhere in the scene, any key while the scene has focus */
-    win.addEventListener('pointerdown', skip);
-    win.addEventListener('keydown', function (e) { if (e.key !== 'Tab') skip(); });
+    function fromReplay(e) { return replay && replay.contains(e.target); }
+    win.addEventListener('pointerdown', function (e) { if (!fromReplay(e)) skip(); });
+    win.addEventListener('keydown', function (e) { if (e.key !== 'Tab' && !fromReplay(e)) skip(); });
     if (replay) replay.addEventListener('click', start);
 
     /* show the live scene, hide the static picture */

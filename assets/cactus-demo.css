@@ -20,10 +20,16 @@
 .cactus-art.is-blink .cactus-lash{animation:cactus-lash .22s ease-in-out}
 @keyframes cactus-lid{0%{transform:scaleY(0)}40%,60%{transform:scaleY(1)}100%{transform:scaleY(0)}}
 @keyframes cactus-lash{0%,30%{opacity:0}42%,58%{opacity:1}70%,100%{opacity:0}}
-.cactus-controls{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:14px 0 0!important}
-.cactus-controls button{min-height:44px;padding:9px 16px;border:1px solid var(--ppk-line);border-radius:11px;background:var(--ppk-panel);color:var(--ppk-accent);font:inherit;font-weight:650;cursor:pointer}
-.cactus-controls button:hover{border-color:var(--ppk-accent)}
-.cactus-controls button:focus-visible{outline:3px solid var(--ppk-focus,#075DD1);outline-offset:2px}
+/* round "grow again" button, top left of the scene; light surface in both themes like the window itself */
+.cactus-demo{position:relative}
+.cactus-replay{position:absolute;top:10px;left:10px;z-index:2;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid #B9C9DE;border-radius:50%;background:#fff;color:#075DD1;cursor:pointer;box-shadow:0 2px 6px rgba(20,37,61,.18)}
+.cactus-replay svg{display:block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s ease}
+.cactus-replay:hover,.cactus-replay:focus-visible{border-color:#075DD1}
+.cactus-replay:hover svg,.cactus-replay:focus-visible svg{transform:rotate(180deg)}
+.cactus-replay:focus-visible{outline:3px solid #075DD1;outline-offset:2px}
+:root[data-theme="dark"] .cactus-replay:focus-visible{outline-color:#9BC5FF}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .cactus-replay:focus-visible{outline-color:#9BC5FF}}
+@container (max-width:420px){.cactus-replay{top:6px;left:6px;width:36px;height:36px}.cactus-replay svg{width:18px;height:18px}}
 .cactus-note{margin:12px 0 0!important;color:var(--ppk-muted);font-size:14px;text-align:center}
 /* hero scenes: the window sits in the right column of the hero (landing) or beside the lead (guide) */
 .cactus-scene{min-width:0}
@@ -41,5 +47,5 @@
   .cactus-svg{transition:none}
   .cactus-art.is-lifted .cactus-svg{transform:none}
   .cactus-lid,.cactus-lash{animation:none!important}
-  .cactus-controls{display:none}
+  .cactus-replay{display:none}
 }

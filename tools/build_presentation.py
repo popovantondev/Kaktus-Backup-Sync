@@ -79,18 +79,26 @@ CACTUS_IMAGE = 'assets/cactus/mascot.webp'
 CACTUS_STATIC = 'docs/images/manual/startup.png'
 
 
+def cactus_replay(lang):
+    """Round icon button with two circular arrows, top left of the scene; label and tooltip in the page language."""
+    label = CACTUS[lang]['replay']
+    return ('<button type="button" class="cactus-replay" aria-label="%s" title="%s">'
+            '<svg viewBox="0 0 24 24" width="22" height="22" focusable="false" aria-hidden="true">'
+            '<path d="M21 3v5h-5"/><path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"/>'
+            '<path d="M3 21v-5h5"/><path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"/></svg></button>') % (label, label)
+
+
 def cactus_scene(d, lang, kind):
-    """Live startup window. kind: hero (landing, grows at once), guide (guide hero, with replay and note)."""
+    """Live startup window. kind: hero (landing, grows at once), guide (guide hero, with note). Both carry the round replay button."""
     c = CACTUS[lang]
     version = d['version'].split('-')[0].rsplit('.', 1)[0] + (' · Preview' if d['status'] == 'preview' else '')
     window = ('<div class="cactus-demo%s" data-cactus-demo data-start="load" data-image="%s" hidden>\n'
               '<div class="cactus-window" role="group" aria-label="%s">\n'
               '<div class="cactus-copy"><div class="cactus-title">Kaktus</div><div class="cactus-sub">Backup &amp; Sync</div><div class="cactus-bar"></div><div class="cactus-ver">%s</div></div>\n'
-              '<div class="cactus-art" tabindex="0" role="img" aria-label="%s"></div>\n</div>\n') % (
-        ' cactus-hero' if kind == 'hero' else '', CACTUS_IMAGE, c['window'], version, c['art'])
+              '<div class="cactus-art" tabindex="0" role="img" aria-label="%s"></div>\n%s\n</div>\n') % (
+        ' cactus-hero' if kind == 'hero' else '', CACTUS_IMAGE, c['window'], version, c['art'], cactus_replay(lang))
     if kind == 'guide':
-        window += ('<p class="cactus-controls"><button type="button" class="cactus-replay">%s</button></p>\n'
-                   '<p class="cactus-note">%s</p>\n') % (c['replay'], c['note'])
+        window += '<p class="cactus-note">%s</p>\n' % c['note']
     window += '</div>\n'
     static = ('<p class="cactus-static"><a class="guide-full-image" href="%s" aria-label="%s"><img src="%s" alt="%s" width="600" height="340"></a></p>\n') % (
         CACTUS_STATIC, c['open'], CACTUS_STATIC, c['alt'])
@@ -100,7 +108,8 @@ def cactus_scene(d, lang, kind):
 def cactus_mini(lang):
     """Plant only, inside the browser demo; grows when the demo scrolls into view."""
     return ('<div class="cactus-demo cactus-mini" data-cactus-demo data-start="view" data-image="%s" hidden>'
-            '<div class="cactus-art" tabindex="0" role="img" aria-label="%s"></div></div>') % (CACTUS_IMAGE, CACTUS[lang]['mini'])
+            '<div class="cactus-art" tabindex="0" role="img" aria-label="%s"></div>%s</div>') % (
+        CACTUS_IMAGE, CACTUS[lang]['mini'], cactus_replay(lang))
 
 
 def cactus_head():
