@@ -1,6 +1,10 @@
-# Kaktus Backup & Sync 5.2
+<div align="center">
+  <img src="presentation-icon.png" width="128" alt="Kaktus Backup & Sync Symbol">
+</div>
 
-[Deutsch](README.md) · [English](README.en.md) · [Русский](README.ru.md)
+# Kaktus Backup & Sync
+
+[Русский](README.ru.md) · **Deutsch** · [English](README.en.md)
 
 <!-- public-release:start -->
 Einseitige Ordnersicherung mit Vorschau und Aufbewahrung früherer Dateiversionen.
@@ -20,66 +24,43 @@ Einseitige Ordnersicherung mit Vorschau und Aufbewahrung früherer Dateiversione
 **Prüfsummen:** [`Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256) · [`Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256)
 <!-- public-release:end -->
 
-**Windows x64 · Portable ZIP · .NET-Laufzeit enthalten**
-
-- [Releases und SHA-256-Prüfsummen](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7)
-- [Anleitung](docs/HANDBUCH.de.md) · [Rückmeldung](https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose)
-
-Windows-Vorabversion für einseitige Ordnersicherung: Vorschau, frühere Versionen,
-automatische Aufgaben und Bedienung im Infobereich. Deutsch ist die Standardsprache.
-
-Die portable ZIP vollständig entpacken und `KaktusBackupSync.exe` öffnen.
-Die .NET-Laufzeit ist enthalten; Python, SDK und Installation sind nicht nötig.
-Aufgaben, Sprache und Verlauf liegen im Unterordner `runtime`.
-[Portable Kurzanleitung](docs/START-HERE.txt).
+**[Webseite](https://popovantondev.github.io/Kaktus-Backup-Sync/)** · **[Im Browser ausprobieren](https://popovantondev.github.io/Kaktus-Backup-Sync/index.html#demo)**
 
 ![Hauptfenster auf Deutsch. Die dargestellten Ordner und Dateien sind fiktiv.](docs/images/manual/de-main.png)
 
-Prüfen Sie nach dem Download die SHA-256-Prüfsumme, die beim Release angegeben ist.
-Entpacken Sie das vollständige ZIP-Archiv; die
-Anwendung benötigt keine separate Installation.
+Windows-Vorabversion für einseitige Ordnersicherung: Vorschau, frühere Versionen, automatische Aufgaben und Bedienung im Infobereich. Deutsch ist die Standardsprache.
+
+## Erste Schritte
+
+Die portable ZIP vollständig entpacken und `KaktusBackupSync.exe` öffnen. Die .NET-Laufzeit ist enthalten; Python, SDK und Installation sind nicht nötig. Aufgaben, Sprache und Verlauf liegen im Unterordner `runtime`. [Portable Kurzanleitung](docs/START-HERE.txt).
+
+Prüfen Sie nach dem Download die SHA-256-Prüfsumme, die beim Release angegeben ist. Entpacken Sie das vollständige ZIP-Archiv; die Anwendung benötigt keine separate Installation.
 
 1. Eine Aufgabe benennen und vorhandene Quelle und Ziel wählen.
 2. **Prüfen** speichert die Aufgabe und zeigt den Plan.
 3. **Synchronisieren** führt den bestätigten Plan aus.
 4. Optional automatische Prüfungen alle 1, 5, 15, 30 oder 60 Minuten aktivieren.
 
-Neue Aufgaben verlangen fünf erfolgreiche manuelle Bestätigungen. Der Schutz lässt
-sich unter **Sicherheit und Versionen** ändern. Einzelne oder alle Aufgaben können
-pausiert werden. Schließen verbirgt das Fenster; beendet wird über das Symbolmenü.
+Neue Aufgaben verlangen fünf erfolgreiche manuelle Bestätigungen. Der Schutz lässt sich unter **Sicherheit und Versionen** ändern. Einzelne oder alle Aufgaben können pausiert werden. Schließen verbirgt das Fenster; beendet wird über das Symbolmenü.
 
-Quelle → Ziel, keine Rückkopie, keine automatische Löschung von Arbeitsdateien.
-Aktualisierungen sichern frühere Versionen im Ziel; standardmäßig bleiben sieben
-Versionen je Datei. Konfiguration, Verlauf, OneDrive-Metadaten und gebundene
-Wechseldatenträger werden unterstützt.
+Quelle → Ziel, keine Rückkopie, keine automatische Löschung von Arbeitsdateien. Aktualisierungen sichern frühere Versionen im Ziel; standardmäßig bleiben sieben Versionen je Datei. Konfiguration, Verlauf, OneDrive-Metadaten und gebundene Wechseldatenträger werden unterstützt.
 
-## Benutzerhandbücher
+## Dokumentation
 
 - [Deutsches Benutzerhandbuch](docs/HANDBUCH.de.md)
-- [English quick guide](README.en.md)
-- [Русское краткое руководство](README.ru.md)
+- [English user manual](docs/MANUAL.en.md)
+- [Русское руководство](docs/MANUAL.ru.md)
 - [Portable-Kurzanleitung](docs/START-HERE.txt)
-- [Changelog](CHANGELOG.md)
-
-## Entwicklung und Wartungsunterlagen
-
-- [Architektur in drei Sprachen](docs/ARCHITECTURE.md)
-- [Hinweise zum Quelltextpaket](docs/SOURCE-PACKAGE.md)
+- [Changelog](CHANGELOG.md) · [Versionshinweise](docs/release-notes.de.md)
+- [Architektur in drei Sprachen](docs/ARCHITECTURE.md) · [Hinweise zum Quelltextpaket](docs/SOURCE-PACKAGE.md)
 
 ## Datenschutz
 
-Die Anwendung verarbeitet die ausgewählten Ordner lokal und lädt keine Dateien
-hoch. Aufgaben und Verlauf werden im lokalen `runtime`-Ordner gespeichert.
-Screenshots und Fehlerberichte können persönliche Pfade oder Dateinamen zeigen;
-entfernen Sie diese Angaben vor dem Teilen.
+Die Anwendung verarbeitet die ausgewählten Ordner lokal und lädt keine Dateien hoch. Aufgaben und Verlauf werden im lokalen `runtime`-Ordner gespeichert. Screenshots und Fehlerberichte können persönliche Pfade oder Dateinamen zeigen; entfernen Sie diese Angaben vor dem Teilen.
 
 ## Rechte
 
-Der Quelltext ist öffentlich einsehbar, aber nicht Open Source. Eine
-unveränderte Programmversion darf für den persönlichen Gebrauch heruntergeladen
-und ausgeführt werden. [Rechte und Nutzungsbedingungen](RIGHTS.md) ·
-[Hinweise zu Drittanbietern](THIRD_PARTY_NOTICES.md) · [Lizenztext](LICENSE).
-Rückmeldungen sind auf Deutsch, Russisch oder Englisch willkommen.
+Der Quelltext ist öffentlich einsehbar, aber nicht Open Source. Eine unveränderte Programmversion darf für den persönlichen Gebrauch heruntergeladen und ausgeführt werden. [Rechte und Nutzungsbedingungen](RIGHTS.md) · [Hinweise zu Drittanbietern](THIRD_PARTY_NOTICES.md) · [Lizenztext](LICENSE). Rückmeldungen sind auf Deutsch, Russisch oder Englisch willkommen.
 
 ## Bauen und prüfen
 
@@ -94,7 +75,4 @@ dotnet runtime/ui-check/AntonsBackupManager.UiCheck.dll --crash-check
 ./tools/Test-Package.ps1
 ```
 
-Die portable ZIP enthält bereits `portable.flag`. Den gesamten Programmordner
-einschließlich `runtime` zusammen verschieben. Übernahme älterer Aufgaben und Versionen:
-siehe Handbuch. Tests ersetzen keine Prüfung bei Stromausfall oder auf einer sauberen
-Windows-Installation. Quelltext zur Einsicht; [alle Rechte vorbehalten](LICENSE).
+Die portable ZIP enthält bereits `portable.flag`. Den gesamten Programmordner einschließlich `runtime` zusammen verschieben. Übernahme älterer Aufgaben und Versionen: siehe Handbuch. Tests ersetzen keine Prüfung bei Stromausfall oder auf einer sauberen Windows-Installation. Quelltext zur Einsicht; [alle Rechte vorbehalten](LICENSE).
