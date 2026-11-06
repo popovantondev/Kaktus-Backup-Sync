@@ -4,3 +4,6 @@
 *.zip binary
 assets/kit/* text eol=lf
 assets/demo.js text eol=lf
+*.mp3 binary
+*.webp binary
+assets/cactus-demo.* text eol=lf

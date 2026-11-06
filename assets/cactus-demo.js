@@ -1,0 +1,167 @@
+/* Live startup window of Kaktus Backup & Sync for the guide (ru/de/en pages).
+ * Mirrors src/AntonsBackupManager.App/StartupWindow.xaml(.cs): the cactus grows 0.12 -> 1 in 3 s
+ * (one clock for both axes, sine ease in-out, centre = base of the plant), the pot stays still and
+ * covers the growth seam (two layers of one picture), a click or key skips, reduced motion = final frame, no sound.
+ * Runs only in the page: no network, no storage. Sound only after the visitor's first pointerdown/keydown. */
+(function () {
+  'use strict';
+  var root = document.querySelector('[data-cactus-demo]');
+  if (!root) return;
+  var art = root.querySelector('.cactus-art');
+  var win = root.querySelector('.cactus-window');
+  var fallback = document.querySelector('.cactus-static');
+  var replay = root.querySelector('.cactus-replay');
+  var mute = root.querySelector('.cactus-mute');
+  if (!art || !win) return;
+
+  var IMAGE = root.getAttribute('data-image');
+  var SOUND = root.getAttribute('data-sound');
+  var DURATION = 3000, START_SCALE = 0.12;
+  var NS = 'http://www.w3.org/2000/svg';
+  var motion = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  function reduced() { return !!(motion && motion.matches); }
+
+  /* first action of the visitor on the page unlocks sound */
+  var gesture = false;
+  var muted = false;
+  function unlock() { gesture = true; }
+  document.addEventListener('pointerdown', unlock, { capture: true, passive: true });
+  document.addEventListener('keydown', unlock, { capture: true, passive: true });
+
+  /* Window art: 300 x 300 box like the program. Layer 1 grows (clipped to the soil line + the ellipse that
+   * hides the seam), layer 2 is the same picture clipped to the pot and stays still. Eyelids sit on the growing layer. */
+  art.innerHTML =
+    '<svg class="cactus-svg" viewBox="0 0 300 300" focusable="false" aria-hidden="true">' +
+    '<defs>' +
+    '<clipPath id="cactus-clip-seam"><rect x="0" y="0" width="300" height="211"/><ellipse cx="150" cy="216" rx="56" ry="7"/></clipPath>' +
+    '<clipPath id="cactus-clip-plant"><rect x="0" y="0" width="300" height="224"/></clipPath>' +
+    '<clipPath id="cactus-clip-pot"><rect x="0" y="211" width="300" height="89"/></clipPath>' +
+    '<radialGradient id="cactus-skin" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="#86a756"/><stop offset="1" stop-color="#7a9b4d"/></radialGradient>' +
+    '</defs>' +
+    '<g clip-path="url(#cactus-clip-seam)"><g class="cactus-grow">' +
+    '<image href="' + IMAGE + '" width="300" height="300" clip-path="url(#cactus-clip-plant)"/>' +
+    '<g class="cactus-eyes">' +
+    '<g class="cactus-eye"><ellipse class="cactus-lid" cx="136" cy="106.2" rx="6.3" ry="9.3"/><path class="cactus-lash" d="M131.2 108.6 Q136 112.4 140.8 108.6"/></g>' +
+    '<g class="cactus-eye"><ellipse class="cactus-lid" cx="167.2" cy="109.8" rx="6.8" ry="9.6"/><path class="cactus-lash" d="M161.8 112.4 Q167.2 116.4 172.6 112.4"/></g>' +
+    '</g></g></g>' +
+    '<image href="' + IMAGE + '" width="300" height="300" clip-path="url(#cactus-clip-pot)"/>' +
+    '</svg>';
+  var grow = art.querySelector('.cactus-grow');
+
+  function setScale(s) {
+    grow.setAttribute('transform', 'translate(150 224) scale(' + s.toFixed(4) + ') translate(-150 -224)');
+  }
+  function ease(t) { return (1 - Math.cos(Math.PI * t)) / 2; } /* SineEase, EaseInOut */
+
+  var audio = null;
+  function playSound() {
+    if (!gesture || muted || reduced() || !SOUND) return;
+    try {
+      if (!audio) { audio = new Audio(SOUND); audio.volume = 0.3; audio.preload = 'auto'; }
+      audio.currentTime = 0;
+      var p = audio.play();
+      if (p && p.catch) p.catch(function () {});
+    } catch (e) { /* no sound is fine */ }
+  }
+  function stopSound() {
+    try { if (audio) { audio.pause(); audio.currentTime = 0; } } catch (e) { /* ignore */ }
+  }
+
+  var raf = 0, startedAt = 0, running = false, started = false, visible = true, blinkTimer = 0;
+
+  function finish() {
+    if (raf) cancelAnimationFrame(raf);
+    raf = 0;
+    running = false;
+    setScale(1);
+    win.setAttribute('data-state', 'grown');
+    stopSound();
+    scheduleBlink();
+  }
+  function frame(now) {
+    if (!running) return;
+    var t = Math.min(1, (now - startedAt) / DURATION);
+    setScale(START_SCALE + (1 - START_SCALE) * ease(t));
+    if (t >= 1) finish(); else raf = requestAnimationFrame(frame);
+  }
+  function start(withSound) {
+    started = true;
+    stopSound();
+    clearTimeout(blinkTimer);
+    if (reduced()) { finish(); return; }
+    running = true;
+    win.setAttribute('data-state', 'growing');
+    setScale(START_SCALE);
+    if (withSound) playSound();
+    raf = requestAnimationFrame(function (now) { startedAt = now; raf = requestAnimationFrame(frame); });
+  }
+  function skip() { if (running) finish(); }
+
+  /* blink: every 4-8 s, only when the plant is grown and on screen */
+  function blinkOnce() {
+    art.classList.remove('is-blink');
+    void art.offsetWidth; /* restart the CSS animation */
+    art.classList.add('is-blink');
+    setTimeout(function () { art.classList.remove('is-blink'); }, 260);
+  }
+  function scheduleBlink() {
+    clearTimeout(blinkTimer);
+    if (reduced()) return;
+    blinkTimer = setTimeout(function () {
+      if (!running && visible && !document.hidden && !reduced()) blinkOnce();
+      scheduleBlink();
+    }, 4000 + Math.random() * 4000);
+  }
+
+  /* lift on hover / focus / touch, like the robot */
+  function lift(on) { art.classList.toggle('is-lifted', on && !reduced()); }
+  art.addEventListener('pointerenter', function () { lift(true); });
+  art.addEventListener('pointerleave', function () { lift(false); });
+  art.addEventListener('focus', function () { lift(true); });
+  art.addEventListener('blur', function () { lift(false); });
+  var tapTimer = 0;
+  art.addEventListener('click', function () {
+    lift(true);
+    clearTimeout(tapTimer);
+    tapTimer = setTimeout(function () { if (!art.matches(':hover, :focus')) lift(false); }, 900);
+  });
+
+  /* skip: click anywhere in the window, any key while the window has focus */
+  win.addEventListener('pointerdown', skip);
+  win.addEventListener('keydown', function (e) { if (e.key !== 'Tab') skip(); });
+
+  if (replay) replay.addEventListener('click', function () { start(true); });
+  if (mute) {
+    var labelOn = mute.getAttribute('data-on'), labelOff = mute.getAttribute('data-off');
+    mute.addEventListener('click', function () {
+      muted = !muted;
+      mute.setAttribute('aria-pressed', muted ? 'true' : 'false');
+      mute.textContent = muted ? labelOff : labelOn;
+      if (muted) stopSound();
+    });
+  }
+
+  /* show the live window, hide the static picture */
+  root.hidden = false;
+  if (fallback) fallback.hidden = true;
+  setScale(reduced() ? 1 : START_SCALE);
+  win.setAttribute('data-state', reduced() ? 'grown' : 'ready');
+
+  /* the first growth starts when the window first appears on screen (sound only if the visitor already acted) */
+  if (reduced()) {
+    started = true;
+  } else if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        visible = en.isIntersecting;
+        if (en.isIntersecting && !started) { start(true); }
+      });
+    }, { threshold: 0.6 });
+    io.observe(win);
+  } else {
+    start(true);
+  }
+  if (motion && motion.addEventListener) {
+    motion.addEventListener('change', function () { if (reduced()) { finish(); lift(false); } else { scheduleBlink(); } });
+  }
+})();
