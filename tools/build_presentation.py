@@ -112,10 +112,10 @@ def cactus_scene(d, lang, kind):
 
 
 def cactus_mini(lang):
-    """Plant only, inside the browser demo; grows when the demo scrolls into view."""
+    """Plant only, inside the browser demo; grows when the demo scrolls into view. No replay arrow (heroes keep it)."""
     return ('<div class="cactus-demo cactus-mini" data-cactus-demo data-start="view" data-image="%s" hidden>'
-            '<div class="cactus-art" tabindex="0" role="img" aria-label="%s"></div>%s</div>') % (
-        CACTUS_IMAGE, CACTUS[lang]['mini'], cactus_replay(lang))
+            '<div class="cactus-art" tabindex="0" role="img" aria-label="%s"></div></div>') % (
+        CACTUS_IMAGE, CACTUS[lang]['mini'])
 
 
 def cactus_head():
