@@ -23,11 +23,11 @@
 /* "grow again": two thick cream arrows like the badge on the pot, no disc and no frame; a dark green rim keeps them readable on the light window */
 .cactus-demo{position:relative}
 .cactus-replay{position:absolute;top:6px;left:6px;z-index:2;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:0;border-radius:8px;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.cactus-replay svg{display:block;overflow:visible;fill:none;transition:transform .35s ease;filter:drop-shadow(0 1px 1.5px rgba(10,40,25,.45))}
-.cactus-replay path{fill:none;stroke-linecap:round;stroke-linejoin:round}
-.cactus-replay path.cactus-arrow-rim{stroke:#1F4D36;stroke-width:4}
+.cactus-replay svg{display:block;overflow:visible;fill:none;transition:transform .35s ease}
+.cactus-replay path{fill:none;stroke-linecap:round;stroke-linejoin:round;shape-rendering:geometricPrecision;paint-order:stroke fill}
+.cactus-replay path.cactus-arrow-rim{stroke:#1F4D36;stroke-width:4.3}
 .cactus-replay path.cactus-arrow{stroke:#FBF6E8;stroke-width:2.3}
-.cactus-replay path.cactus-head.cactus-arrow-rim{fill:#1F4D36;stroke-width:2}
+.cactus-replay path.cactus-head.cactus-arrow-rim{fill:#1F4D36;stroke-width:3}
 .cactus-replay path.cactus-head.cactus-arrow{fill:#FBF6E8;stroke-width:1}
 .cactus-replay:hover svg,.cactus-replay:focus-visible svg{transform:rotate(180deg)}
 .cactus-replay:focus-visible{outline:3px solid #075DD1;outline-offset:0}
