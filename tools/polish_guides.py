@@ -5,6 +5,7 @@ here from the shared kit (assets/kit) and tools/presentation.json.
 """
 from pathlib import Path
 from html.parser import HTMLParser
+import hashlib
 import html
 import re
 
@@ -47,6 +48,29 @@ COPY = {'ru': ['Содержание', 'Открыть изображение ц
 DEMO_LINK = {'ru': ('Демонстрация для практики', 'Живая сцена с растущим кактусом — вверху страницы.', 'К сцене наверху'),
              'de': ('Kurze Demonstration', 'Die lebendige Kaktus-Szene steht oben auf der Seite.', 'Zur Szene oben'),
              'en': ('Demonstration', 'The live growing-cactus scene is at the top of the page.', 'Go to the scene at the top')}
+
+
+HOME_START = '<!-- ppk-guide-home:start -->'
+HOME_END = '<!-- ppk-guide-home:end -->'
+HOME_LABEL = {'ru': '← На страницу программы', 'de': '← Zur Programmseite', 'en': '← Program page'}
+HOME_PAGE = {'de': 'index.html', 'en': 'index-en.html', 'ru': 'index-ru.html'}
+HOME_CSS = '''.guide-home{margin:22px 0 4px}
+body.ppk-page a.guide-home-link{display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border:1px solid var(--ppk-accent);border-radius:999px;background:var(--ppk-tint);color:var(--ppk-accent);font-size:15px;font-weight:700;line-height:1.3;text-decoration:none}
+body.ppk-page a.guide-home-link:hover{background:var(--ppk-accent);color:var(--ppk-accent-ink,#fff)}
+'''
+
+
+def home_link(s, lang):
+    """Visible link from the top of the guide to the landing page of this program in the same language."""
+    s = re.sub(re.escape(HOME_START) + '.*?' + re.escape(HOME_END) + r'\s*', '', s, flags=re.S)
+    block = HOME_START + '<p class="guide-home"><a class="guide-home-link" href="' + HOME_PAGE[lang] + '">' + HOME_LABEL[lang] + '</a></p>' + HOME_END + '\n'
+    return re.sub(r'(<main\b[^>]*>)\s*', lambda m: m.group(1) + '\n' + block, s, count=1)
+
+
+def css_rev(text):
+    return hashlib.md5(text.encode('utf-8')).hexdigest()[:8]
+
+CSS += HOME_CSS
 
 
 def full_images(source, label):
@@ -148,6 +172,7 @@ def main():
                      '</ol></details></aside><!-- guide-polish:end -->\n')
         anchor = '<!-- public-release:end -->' if '<!-- public-release:end -->' in s else '<!-- guide-hero:end -->'
         s = s.replace(anchor, anchor + '\n' + tools.rstrip('\n'), 1) if tools else s
+        s = home_link(s, lang)
         s = full_images(s, t[1])
         path.write_bytes(s.encode('utf-8'))
 
