@@ -1,10 +1,25 @@
-<div align="center">
-  <img src="presentation-icon.png" width="128" alt="Значок Kaktus Backup & Sync">
-</div>
+<!-- ppk-readme:head:start -->
+<a href="https://popovantondev.github.io/Kaktus-Backup-Sync/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/header-ru-dark.404e6e98.svg"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/header-ru-light.8b20fad9.svg" width="880" height="188" alt="Kaktus Backup &amp; Sync — Одностороннее резервное копирование папок с предпросмотром. Windows · x64, Предварительный выпуск 5.2.0-preview.7"></picture></a>
+<!-- ppk-readme:head:end -->
 
 # Kaktus Backup & Sync
 
 **Русский** · [Deutsch](README.md) · [English](README.en.md)
+
+<!-- ppk-readme:body:start -->
+<p>
+<a href="https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-download-ru-dark.5914e15c.svg"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-download-ru-light.ea3dad84.svg" width="120" height="36" alt="Скачать"></picture></a>
+<a href="https://popovantondev.github.io/Kaktus-Backup-Sync/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-website-ru-dark.1975d1d2.svg"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-website-ru-light.331f5d05.svg" width="92" height="36" alt="Сайт"></picture></a>
+<a href="https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-guide-ru-dark.a0f45e82.svg"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-guide-ru-light.f726c1a5.svg" width="161" height="36" alt="Руководство"></picture></a>
+<a href="https://popovantondev.github.io/Kaktus-Backup-Sync/index-ru.html#demo"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-demo-ru-dark.b651033a.svg"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-demo-ru-light.5699c079.svg" width="261" height="36" alt="Попробовать в браузере"></picture></a>
+<a href="https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-bug-ru-dark.0048d827.svg"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-bug-ru-light.ae638727.svg" width="234" height="36" alt="Сообщить об ошибке"></picture></a>
+</p>
+
+<p><a href="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/images/manual/ru-main.png"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/preview-ru-dark.96565cd1.webp"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/preview-ru-light.cdee99ba.webp" width="880" height="516" alt="Интерфейс программы Kaktus Backup &amp; Sync"></picture></a><br>
+<sub><a href="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/images/manual/ru-main.png">Снимок целиком</a></sub></p>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/divider-dark.bab18a3d.svg"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/divider-light.98327623.svg" width="880" height="6" alt="Разделитель"></picture>
+<!-- ppk-readme:body:end -->
 
 <!-- public-release:start -->
 Выполняет одностороннее резервное копирование папок с предварительным просмотром и сохранением предыдущих версий.
@@ -23,10 +38,6 @@
 
 **Контрольные суммы:** [`Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256) · [`Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256)
 <!-- public-release:end -->
-
-**[Сайт](https://popovantondev.github.io/Kaktus-Backup-Sync/index-ru.html)** · **[Попробовать в браузере](https://popovantondev.github.io/Kaktus-Backup-Sync/index-ru.html#demo)**
-
-![Главное окно на русском. Папки и файлы на снимке вымышлены.](docs/images/manual/ru-main.png)
 
 Предварительная Windows-программа для односторонней синхронизации: просмотр плана, предыдущие версии, автоматические задачи и трей. Немецкий язык основной; русский и английский переключаются без перезапуска.
 

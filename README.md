@@ -1,10 +1,25 @@
-<div align="center">
-  <img src="presentation-icon.png" width="128" alt="Kaktus Backup & Sync Symbol">
-</div>
+<!-- ppk-readme:head:start -->
+<a href="https://popovantondev.github.io/Kaktus-Backup-Sync/index.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/header-de-dark.c348cb51.svg"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/header-de-light.5b4f5fab.svg" width="880" height="188" alt="Kaktus Backup &amp; Sync — Einseitige Ordnersicherung mit Vorschau und alten Versionen. Windows · x64, Vorabversion 5.2.0-preview.7"></picture></a>
+<!-- ppk-readme:head:end -->
 
 # Kaktus Backup & Sync
 
 [Русский](README.ru.md) · **Deutsch** · [English](README.en.md)
+
+<!-- ppk-readme:body:start -->
+<p>
+<a href="https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-download-de-dark.db32c421.svg"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-download-de-light.7630e828.svg" width="171" height="36" alt="Herunterladen"></picture></a>
+<a href="https://popovantondev.github.io/Kaktus-Backup-Sync/index.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-website-de-dark.fbed3b49.svg"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-website-de-light.2388fc4c.svg" width="129" height="36" alt="Webseite"></picture></a>
+<a href="https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-de.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-guide-de-dark.539817d8.svg"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-guide-de-light.7ad42bd3.svg" width="134" height="36" alt="Anleitung"></picture></a>
+<a href="https://popovantondev.github.io/Kaktus-Backup-Sync/index.html#demo"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-demo-de-dark.41adb2e6.svg"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-demo-de-light.92163752.svg" width="203" height="36" alt="Im Browser testen"></picture></a>
+<a href="https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-bug-de-dark.1a46c57c.svg"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/btn-bug-de-light.91607e38.svg" width="168" height="36" alt="Fehler melden"></picture></a>
+</p>
+
+<p><a href="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/images/manual/de-main.png"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/preview-de-dark.38c4eaaa.webp"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/preview-de-light.234df61d.webp" width="880" height="516" alt="Oberfläche von Kaktus Backup &amp; Sync"></picture></a><br>
+<sub><a href="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/images/manual/de-main.png">Ganzer Screenshot</a></sub></p>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/divider-dark.bab18a3d.svg"><img src="https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/divider-light.98327623.svg" width="880" height="6" alt="Trennlinie"></picture>
+<!-- ppk-readme:body:end -->
 
 <!-- public-release:start -->
 Einseitige Ordnersicherung mit Vorschau und Aufbewahrung früherer Dateiversionen.
@@ -23,10 +38,6 @@ Einseitige Ordnersicherung mit Vorschau und Aufbewahrung früherer Dateiversione
 
 **Prüfsummen:** [`Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256) · [`Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256`](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256)
 <!-- public-release:end -->
-
-**[Webseite](https://popovantondev.github.io/Kaktus-Backup-Sync/)** · **[Im Browser ausprobieren](https://popovantondev.github.io/Kaktus-Backup-Sync/index.html#demo)**
-
-![Hauptfenster auf Deutsch. Die dargestellten Ordner und Dateien sind fiktiv.](docs/images/manual/de-main.png)
 
 Windows-Vorabversion für einseitige Ordnersicherung: Vorschau, frühere Versionen, automatische Aufgaben und Bedienung im Infobereich. Deutsch ist die Standardsprache.
 
