@@ -105,7 +105,18 @@
 
   function addRow(f, pending) {
     var li = el('li');
-    var name = el('span', null, f[0]);
+    var name = el('span');
+    /* a long file name may wrap after "_" or "/" only, and its extension never leaves the last piece ("…Praktikum.pdf") */
+    var dot = f[0].lastIndexOf('.');
+    var base = dot > 0 ? f[0].slice(0, dot) : f[0];
+    var ext = dot > 0 ? f[0].slice(dot) : '';
+    var pieces = base.match(/[^_\/]*[_\/]?/g).filter(Boolean);
+    var last = pieces.pop() || '';
+    pieces.forEach(function (p) { name.appendChild(document.createTextNode(p)); name.appendChild(document.createElement('wbr')); });
+    var tail = el('span', null, last + ext);
+    tail.style.whiteSpace = 'nowrap';
+    name.appendChild(tail);
+    name.style.overflowWrap = 'break-word';
     if (!pending) name.appendChild(el('small', null, ' · ' + T.states[f[1]]));
     li.appendChild(name);
     li.appendChild(el('span', 'ppk-badge' + (pending ? '' : BADGE[f[2]]), pending ? T.pending : T.acts[f[2]]));
